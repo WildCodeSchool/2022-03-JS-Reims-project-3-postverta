@@ -1,8 +1,21 @@
-## Concept
+# Postverta
 
-Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
+## Déscription
 
-## Installation & Utilisation
+Postverta est une maison d’édition numérique qui permet de lire en ligne via une application et qui offre la possibilité d’utiliser les personnages des différents romans dans un jeu de carte inclus à l’intérieur.
+
+## Développeurs
+
+- [Quentin Samuel](https://github.com/QuentinSamuel "Quentin Samuel")
+- [Jaafar Cherif](https://github.com/Jaafar-Cherif "Jaafar Cherif")
+- [Jeffrey Rigaux](https://github.com/PiXeleum "Jeffrey Rigaux")
+- [Louis Dufourmantelle](https://github.com/Louis-Dufourmantelle "Louis Dufourmantelle")
+
+## Support
+
+Ce template est conçu pour servir de base à tous les projets suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
+
+# Installation & Utilisation
 
 ### Pour commencer un projet
 
