@@ -11,10 +11,14 @@ Postverta is a digital publishing house that allows you to read online via an ap
 - [Jeffrey Rigaux](https://github.com/PiXeleum "Jeffrey Rigaux")
 - [Louis Dufourmantelle](https://github.com/Louis-Dufourmantelle "Louis Dufourmantelle")
 
-## Suport
+## Support
 
 This template is meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
 It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+
+## Dates
+
+23/05/2022 - 13/07/2022
 
 # Setup & Use
 

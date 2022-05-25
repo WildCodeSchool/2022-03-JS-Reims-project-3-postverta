@@ -15,6 +15,10 @@ Postverta est une maison d’édition numérique qui permet de lire en ligne via
 
 Ce template est conçu pour servir de base à tous les projets suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
 
+## Dates
+
+23/05/2022 - 13/07/2022
+
 # Installation & Utilisation
 
 ### Pour commencer un projet
