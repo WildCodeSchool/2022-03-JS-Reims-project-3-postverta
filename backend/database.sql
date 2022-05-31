@@ -40,7 +40,38 @@ INSERT INTO `Card` (`id`, `name`) VALUES
 (2, "Maitre Corbeau"),
 (3, "Barbe Bleu"),
 (4, "Blanche De Gibeaumex"),
-(5, "Génie De L'Asama");
+(5, "Génie De L'Asama"),
+(6, "Hikusen, Daïmio De Taratori"),
+(7, "Le Chevalier De La Merlus"),
+(8, "Maître Loup"),
+(9, "Nareya"),
+(10, "Otohimé, Déesse De L'Océan"),
+(11, "Ourashima Taro"),
+(12, "Dragon A Plusieurs Queues"),
+(13, "Seigneur Aigle"),
+(14, "Seigneur Dragon"),
+(15, "Seigneur Poisson"),
+(16, "Sentinelle De L'Asama"),
+(17, "Yasumasu , Le Joueur De Flûte"),
+(18, "Yori, Le Daïmio"),
+(19, "Yotsu, Daïmio De Nagawa"),
+(20, "Asama-Yama"),
+(21, "Forêt Enchantée D'Homokusai"),
+(22, "Palais D'Otohimé"),
+(23, "Aki, La petite voleuse"),
+(24, "Talisman De l'Asama-Yama"),
+(25, "Plutôt Souffrir Que Mourir"),
+(26, "En Société Avec Le Lion"),
+(27, "L'amour De Nikkô"),
+(28, "Boite D'Otohimé"),
+(29, "Malédiction Du Génie De Corée"),
+(30, "Cabinet Des Princesses Infortunées"),
+(31, "Funeste Présage"),
+(32, "Héritage d'Outarde"),
+(33, "La Clef Du Cabinet De Barbe Bleu"),
+(34, "La Mort Et Le Malheureux"),
+(35, "Mariage Des Etoiles"),
+(36, "Prophétie De L'Hirondelle");
 
 --
 -- Index pour les tables exportées
@@ -60,7 +91,7 @@ ALTER TABLE `Card`
 -- AUTO_INCREMENT pour la table `Card`
 --
 ALTER TABLE `Card`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
