@@ -6,8 +6,15 @@ const card = {
 export default function Card() {
   return (
     <div className="card">
-      <h5 className="card-name">{card.name}</h5>
-      <h5 className="card-id">{card.id}</h5>
+      <figure className="card__figure">
+        <h1>{card.name}</h1>
+        <img src="https://picsum.photos/200" alt="Quentin" />
+        <figcaption className="card__figcaption">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+          aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis
+          suscipit eaque?
+        </figcaption>
+      </figure>
     </div>
   );
 }
