@@ -1,4 +1,4 @@
-import Cardlist from "./components/Cardlist";
+import Cardlist from "./components/CardList";
 import Home from "./pages/Home";
 
 import "./App.css";
