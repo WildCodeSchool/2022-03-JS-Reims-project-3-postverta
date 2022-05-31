@@ -6,15 +6,15 @@ const { CardController } = require("./controllers");
 const router = express.Router();
 
 router.get("/users", UserController.browse);
-router.get("/user/:id", UserController.read);
-router.put("/user/:id", UserController.edit);
-router.post("/user", UserController.add);
-router.delete("/user/:id", UserController.delete);
+router.get("/users/:id", UserController.read);
+router.put("/users/:id", UserController.edit);
+router.post("/users", UserController.add);
+router.delete("/users/:id", UserController.delete);
 
 router.get("/cards", CardController.browse);
-router.get("/card/:id", CardController.read);
-router.put("/card/:id", CardController.edit);
-router.post("/card", CardController.add);
-router.delete("/card/:id", CardController.delete);
+router.get("/cards/:id", CardController.read);
+router.put("/cards/:id", CardController.edit);
+router.post("/cards", CardController.add);
+router.delete("/cards/:id", CardController.delete);
 
 module.exports = router;
