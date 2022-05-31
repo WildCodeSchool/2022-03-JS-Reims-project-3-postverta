@@ -60,7 +60,7 @@ ALTER TABLE `Card`
 -- AUTO_INCREMENT pour la table `Card`
 --
 ALTER TABLE `Card`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -81,7 +81,7 @@ CREATE TABLE `User` (
 
 INSERT INTO `User` (`id`, `name`, `email`, `password`) VALUES
 (1, "Louis", "louis@wild.com", "Wild51"),
-(2, "Quentin", "quentin@wild", "Wild99");
+(2, "Quentin", "quentin@wild.com", "Wild99");
 
 --
 -- Index pour les tables exportées
