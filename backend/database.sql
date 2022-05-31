@@ -23,30 +23,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `Card`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `Card` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+  `name` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `item`
+-- Contenu de la table `Card`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `Card` (`id`, `name`) VALUES
+(1, "La Cigale Chanteuse"),
+(2, "Maitre Corbeau"),
+(3, "Barbe Bleu"),
+(4, "Blanche De Gibeaumex"),
+(5, "Génie De L'Asama");
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `item`
+-- Index pour la table `Card`
 --
-ALTER TABLE `item`
+ALTER TABLE `Card`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,9 +57,52 @@ ALTER TABLE `item`
 --
 
 --
--- AUTO_INCREMENT pour la table `item`
+-- AUTO_INCREMENT pour la table `Card`
 --
-ALTER TABLE `item`
+ALTER TABLE `Card`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Structure de la table `User`
+
+CREATE TABLE `User` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `User`
+--
+
+INSERT INTO `User` (`id`, `name`, `email`, `password`) VALUES
+(1, "Louis", "louis@wild.com", "Wild51"),
+(2, "Quentin", "quentin@wild", "Wild99");
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `User`
+--
+
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `User`
+--
+
+ALTER TABLE `User`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
