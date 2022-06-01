@@ -28,33 +28,41 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `card` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(150) NOT NULL
+  `name` varchar(150) NOT NULL,
+  `attack` INT,
+  `defense` INT,
+  `pv` INT,
+  `skill` varchar(250),
+  `type` varchar(100),
+  `element` varchar(100),
+  `class` varchar(100),
+  `starCount` INT; 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `Card`
 --
 
-INSERT INTO `card` (`id`, `name`) VALUES
-(1, "La Cigale Chanteuse"),
-(2, "Maitre Corbeau"),
-(3, "Barbe Bleu"),
-(4, "Blanche De Gibeaumex"),
-(5, "Génie De L'Asama"),
-(6, "Hikusen, Daïmio De Taratori"),
-(7, "Le Chevalier De La Merlus"),
-(8, "Maître Loup"),
-(9, "Nareya"),
-(10, "Otohimé, Déesse De L'Océan"),
-(11, "Ourashima Taro"),
-(12, "Dragon A Plusieurs Queues"),
-(13, "Seigneur Aigle"),
-(14, "Seigneur Dragon"),
-(15, "Seigneur Poisson"),
-(16, "Sentinelle De L'Asama"),
-(17, "Yasumasu , Le Joueur De Flûte"),
-(18, "Yori, Le Daïmio"),
-(19, "Yotsu, Daïmio De Nagawa"),
+INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `element`, `class`, `starCount`) VALUES
+(1, "La Cigale Chanteuse", 2, 2, 6, "Lorem ipsum dolor sit amet.", "Insecte", "Terre", "Gardien Normal", 1),
+(2, "Maitre Corbeau", 6, 2, 6, "Lorem ipsum dolor sit amet.", "Oiseau", "Air", "Gardien Normal", 1),
+(3, "Barbe Bleu", 5, 10, 15, "Lorem ipsum dolor sit amet.", "Guerrier", "Terre", "Gardien De Synthèse", 3),
+(4, "Blanche De Gibeaumex", 0, 3, 3, "Lorem ipsum dolor sit amet.", "Dame", "Lumière", "Gardien De Support", 2),
+(5, "Génie De L'Asama", 20, 5, 25, "Lorem ipsum dolor sit amet.", "Esprit", "Feu", "Gardien Normal", 5),
+(6, "Hikusen, Daïmio De Taratori", 2, 6, 2, "Lorem ipsum dolor sit amet.", "Guerrier", "Feu", "Gardien Normal", 1),
+(7, "Le Chevalier De La Merlus", 20, 10, 10, "Lorem ipsum dolor sit amet.", "Chevalier", "Terre", "Gardien Normal", 4),
+(8, "Maître Loup", 10, 6, 4, "Lorem ipsum dolor sit amet.", "Bête", "Ténèbres", "Gardien Normal", 2),
+(9, "Nareya", 1, 4, 10, "Lorem ipsum dolor sit amet.", "Dame", "Eau", "Gardien De Support", 1),
+(10, "Otohimé, Déesse De L'Océan", 1, 4, 10, "Lorem ipsum dolor sit amet.", "Divinité", "Eau", "Gardien De Support", 5),
+(11, "Ourashima Taro", 2, 5, 5, "Lorem ipsum dolor sit amet.", "Héros", "Eau", "Gardien A Talent", 2),
+(12, "Dragon A Plusieurs Queues", 10, 10, 10, "Lorem ipsum dolor sit amet.", "Dragon", "Poison", "Gardien A Talent", 5),
+(13, "Seigneur Aigle", 4, 0, 2, "Lorem ipsum dolor sit amet.", "Homme-bête", "Air", "Gardien A Talent", 1),
+(14, "Seigneur Dragon", 5, 5, 40, "Lorem ipsum dolor sit amet.", "Homme-bête", "Plante", "Gardien Normal", 5),
+(15, "Seigneur Poisson", 4, 6, 8, "Lorem ipsum dolor sit amet.", "Homme-bête", "Eau", "Gardien A Talent", 3),
+(16, "Sentinelle De L'Asama", 10, 5, 15, "Lorem ipsum dolor sit amet.", "Guerrier", "Feu", "Gardien Normal", 3),
+(17, "Yasumasu , Le Joueur De Flûte", 3, 3, 4, "Lorem ipsum dolor sit amet.", "Artiste", "Air", "Gardien De Synthèse", 1),
+(18, "Yori, Le Daïmio", 5, 5, 10, "Lorem ipsum dolor sit amet.", "Héros", "Lumière", "Gardien Normal", 2),
+(19, "Yotsu, Daïmio De Nagawa", 20, 15, 5, "Lorem ipsum dolor sit amet.", "Guerrier", "Plante", "Gardien Normal", 4),
 (20, "Asama-Yama"),
 (21, "Forêt Enchantée D'Homokusai"),
 (22, "Palais D'Otohimé"),
