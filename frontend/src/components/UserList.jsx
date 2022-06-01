@@ -31,7 +31,7 @@ const userList = [
   },
 ];
 
-export default function Userlist() {
+export default function UserList() {
   return (
     <ul className="userList">
       {userList.map((user) => (
