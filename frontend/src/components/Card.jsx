@@ -1,6 +1,17 @@
+import "./Card.css";
+
 const card = {
-  id: "1",
-  name: "Quentin",
+  id: 1,
+  name: "Maître Loup",
+  attack: 5,
+  defense: 8,
+  pv: 10,
+  skill:
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam, quidem, doloremque, quas, quos, doloribus, voluptate, eum, quia, eius. ",
+  type: "oiseau",
+  element: "feu",
+  class: "gardien normal",
+  starCount: 3,
 };
 
 export default function Card() {
