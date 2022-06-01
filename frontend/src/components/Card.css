@@ -1,0 +1,25 @@
+.card {
+  border: 1px solid black;
+  margin: 1rem;
+}
+.card__img {
+  border: 5px solid black;
+}
+
+.card__figcaption {
+  border: 1px solid black;
+}
+.card__name {
+  border: 1px solid black;
+  margin: 1rem;
+}
+.card__stars {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 0;
+  overflow: hidden;
+  background-image: url("../assets/img/star-black.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
