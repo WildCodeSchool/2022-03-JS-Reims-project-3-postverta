@@ -5,15 +5,15 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UserManager.table} (title) values (?)`,
-      [user.title]
+      `insert into ${UserManager.table} (name) values (?)`,
+      [user.name]
     );
   }
 
   update(user) {
     return this.connection.query(
-      `update ${UserManager.table} set title = ? where id = ?`,
-      [user.title, user.id]
+      `update ${UserManager.table} set name = ? where id = ?`,
+      [user.name, user.id]
     );
   }
 }

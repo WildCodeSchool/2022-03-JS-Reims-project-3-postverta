@@ -5,15 +5,15 @@ class CardManager extends AbstractManager {
 
   insert(card) {
     return this.connection.query(
-      `insert into ${CardManager.table} (title) values (?)`,
-      [card.title]
+      `insert into ${CardManager.table} (name) values (?)`,
+      [card.name]
     );
   }
 
   update(card) {
     return this.connection.query(
-      `update ${CardManager.table} set title = ? where id = ?`,
-      [card.title, card.id]
+      `update ${CardManager.table} set name = ? where id = ?`,
+      [card.name, card.id]
     );
   }
 }
