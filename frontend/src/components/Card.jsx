@@ -1,22 +1,22 @@
 import "./Card.css";
 
-const card = {
-  id: 1,
-  name: "Maître Loup",
-  attack: 5,
-  defense: 8,
-  pv: 10,
-  skill:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam, quidem, doloremque, quas, quos, doloribus, voluptate, eum, quia, eius. ",
-  type: "oiseau",
-  element: "feu",
-  class: "gardien normal",
-  starCount: 3,
-};
-
 export default function Card() {
+  const card = {
+    id: 1,
+    name: "Maître Loup",
+    attack: 5,
+    defense: 8,
+    pv: 10,
+    skill:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam, quidem, doloremque, quas, quos, doloribus, voluptate, eum, quia, eius. ",
+    type: "oiseau",
+    element: "feu",
+    class: "terrain",
+    starCount: "3",
+  };
+
   return (
-    <article className="card">
+    <article className={`card ${card.class}`}>
       <header>
         <h1 className="card__name">{card.name}</h1>
         <span
@@ -33,7 +33,7 @@ export default function Card() {
           alt="Quentin"
         />
         <figcaption className="card__figcaption">
-          <p className="card__type">
+          <p className="card__class">
             [ {card.class} ({card.pv}pv) ]
           </p>
           <p className="card__type">
