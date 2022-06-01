@@ -1,4 +1,4 @@
-const userlist = [
+const userList = [
   {
     id: "1",
     name: "John",
@@ -35,7 +35,7 @@ export default function Userlist() {
   return (
     <div className="userlist">
       <ul>
-        {userlist.map((user) => {
+        {userList.map((user) => {
           return (
             <li key={user.id}>
               {user.name} {user.email} {user.password}

@@ -1,13 +1,20 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const { UserController } = require("./controllers");
+const { CardController } = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/users", UserController.browse);
+router.get("/users/:id", UserController.read);
+router.put("/users/:id", UserController.edit);
+router.post("/users", UserController.add);
+router.delete("/users/:id", UserController.delete);
+
+router.get("/cards", CardController.browse);
+router.get("/cards/:id", CardController.read);
+router.put("/cards/:id", CardController.edit);
+router.post("/cards", CardController.add);
+router.delete("/cards/:id", CardController.delete);
 
 module.exports = router;

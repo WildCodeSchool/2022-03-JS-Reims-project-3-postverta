@@ -1,3 +1,4 @@
+import Card from "./components/Card";
 import Home from "./pages/Home";
 
 import "./App.css";
@@ -7,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Userlist />
+      <Card />
       <Home />
-      <p>coucou</p>
     </div>
   );
 }
