@@ -2,12 +2,12 @@ import Card from "./components/Card";
 import Home from "./pages/Home";
 
 import "./App.css";
-import Userlist from "./components/Userlist";
+import UserList from "./components/UserList";
 
 function App() {
   return (
     <div className="App">
-      <Userlist />
+      <UserList />
       <Card />
       <Home />
     </div>
