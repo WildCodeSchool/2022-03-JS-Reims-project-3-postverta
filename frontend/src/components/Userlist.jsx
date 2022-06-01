@@ -33,16 +33,12 @@ const userList = [
 
 export default function Userlist() {
   return (
-    <div className="userlist">
-      <ul>
-        {userList.map((user) => {
-          return (
-            <li key={user.id}>
-              {user.name} {user.email} {user.password}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul className="userList">
+      {userList.map((user) => (
+        <li key={user.id}>
+          {user.name} {user.email} {user.password}
+        </li>
+      ))}
+    </ul>
   );
 }
