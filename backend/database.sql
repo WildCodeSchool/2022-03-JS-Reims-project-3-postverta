@@ -23,30 +23,72 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `Card`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `card` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+  `name` varchar(150) NOT NULL,
+  `attack` INT,
+  `defense` INT,
+  `pv` INT,
+  `skill` varchar(250),
+  `type` varchar(100),
+  `element` varchar(100),
+  `class` varchar(100),
+  `starCount` INT; 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `item`
+-- Contenu de la table `Card`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `element`, `class`, `starCount`) VALUES
+(1, "La Cigale Chanteuse", 2, 2, 6, "Lorem ipsum dolor sit amet.", "Insecte", "Terre", "Gardien Normal", 1),
+(2, "Maitre Corbeau", 6, 2, 6, "Lorem ipsum dolor sit amet.", "Oiseau", "Air", "Gardien Normal", 1),
+(3, "Barbe Bleu", 5, 10, 15, "Lorem ipsum dolor sit amet.", "Guerrier", "Terre", "Gardien De Synthèse", 3),
+(4, "Blanche De Gibeaumex", 0, 3, 3, "Lorem ipsum dolor sit amet.", "Dame", "Lumière", "Gardien De Support", 2),
+(5, "Génie De L'Asama", 20, 5, 25, "Lorem ipsum dolor sit amet.", "Esprit", "Feu", "Gardien Normal", 5),
+(6, "Hikusen, Daïmio De Taratori", 2, 6, 2, "Lorem ipsum dolor sit amet.", "Guerrier", "Feu", "Gardien Normal", 1),
+(7, "Le Chevalier De La Merlus", 20, 10, 10, "Lorem ipsum dolor sit amet.", "Chevalier", "Terre", "Gardien Normal", 4),
+(8, "Maître Loup", 10, 6, 4, "Lorem ipsum dolor sit amet.", "Bête", "Ténèbres", "Gardien Normal", 2),
+(9, "Nareya", 1, 4, 10, "Lorem ipsum dolor sit amet.", "Dame", "Eau", "Gardien De Support", 1),
+(10, "Otohimé, Déesse De L'Océan", 1, 4, 10, "Lorem ipsum dolor sit amet.", "Divinité", "Eau", "Gardien De Support", 5),
+(11, "Ourashima Taro", 2, 5, 5, "Lorem ipsum dolor sit amet.", "Héros", "Eau", "Gardien A Talent", 2),
+(12, "Dragon A Plusieurs Queues", 10, 10, 10, "Lorem ipsum dolor sit amet.", "Dragon", "Poison", "Gardien A Talent", 5),
+(13, "Seigneur Aigle", 4, 0, 2, "Lorem ipsum dolor sit amet.", "Homme-bête", "Air", "Gardien A Talent", 1),
+(14, "Seigneur Dragon", 5, 5, 40, "Lorem ipsum dolor sit amet.", "Homme-bête", "Plante", "Gardien Normal", 5),
+(15, "Seigneur Poisson", 4, 6, 8, "Lorem ipsum dolor sit amet.", "Homme-bête", "Eau", "Gardien A Talent", 3),
+(16, "Sentinelle De L'Asama", 10, 5, 15, "Lorem ipsum dolor sit amet.", "Guerrier", "Feu", "Gardien Normal", 3),
+(17, "Yasumasu , Le Joueur De Flûte", 3, 3, 4, "Lorem ipsum dolor sit amet.", "Artiste", "Air", "Gardien De Synthèse", 1),
+(18, "Yori, Le Daïmio", 5, 5, 10, "Lorem ipsum dolor sit amet.", "Héros", "Lumière", "Gardien Normal", 2),
+(19, "Yotsu, Daïmio De Nagawa", 20, 15, 5, "Lorem ipsum dolor sit amet.", "Guerrier", "Plante", "Gardien Normal", 4),
+(20, "Asama-Yama"),
+(21, "Forêt Enchantée D'Homokusai"),
+(22, "Palais D'Otohimé"),
+(23, "Aki, La petite voleuse"),
+(24, "Talisman De l'Asama-Yama"),
+(25, "Plutôt Souffrir Que Mourir"),
+(26, "En Société Avec Le Lion"),
+(27, "L'amour De Nikkô"),
+(28, "Boite D'Otohimé"),
+(29, "Malédiction Du Génie De Corée"),
+(30, "Cabinet Des Princesses Infortunées"),
+(31, "Funeste Présage"),
+(32, "Héritage d'Outarde"),
+(33, "La Clef Du Cabinet De Barbe Bleu"),
+(34, "La Mort Et Le Malheureux"),
+(35, "Mariage Des Etoiles"),
+(36, "Prophétie De L'Hirondelle");
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `item`
+-- Index pour la table `Card`
 --
-ALTER TABLE `item`
+ALTER TABLE `card`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,9 +96,49 @@ ALTER TABLE `item`
 --
 
 --
--- AUTO_INCREMENT pour la table `item`
+-- AUTO_INCREMENT pour la table `Card`
 --
-ALTER TABLE `item`
+ALTER TABLE `card`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+
+-- Structure de la table `User`
+
+CREATE TABLE `user` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `User`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
+(1, "Louis", "louis@wild.com", "Wild51"),
+(2, "Quentin", "quentin@wild.com", "Wild99");
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `User`
+--
+
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `User`
+--
+
+ALTER TABLE `user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
