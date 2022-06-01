@@ -36,7 +36,7 @@ CREATE TABLE `card` (
   `type` varchar(100),
   `element` varchar(100),
   `class` varchar(100),
-  `starCount` INT; 
+  `starCount` INT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -63,23 +63,23 @@ INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `el
 (17, "Yasumasu , Le Joueur De Flûte", 3, 3, 4, "Lorem ipsum dolor sit amet.", "Artiste", "Air", "Gardien De Synthèse", 1),
 (18, "Yori, Le Daïmio", 5, 5, 10, "Lorem ipsum dolor sit amet.", "Héros", "Lumière", "Gardien Normal", 2),
 (19, "Yotsu, Daïmio De Nagawa", 20, 15, 5, "Lorem ipsum dolor sit amet.", "Guerrier", "Plante", "Gardien Normal", 4),
-(20, "Asama-Yama"),
-(21, "Forêt Enchantée D'Homokusai"),
-(22, "Palais D'Otohimé"),
-(23, "Aki, La petite voleuse"),
-(24, "Talisman De l'Asama-Yama"),
-(25, "Plutôt Souffrir Que Mourir"),
-(26, "En Société Avec Le Lion"),
-(27, "L'amour De Nikkô"),
-(28, "Boite D'Otohimé"),
-(29, "Malédiction Du Génie De Corée"),
-(30, "Cabinet Des Princesses Infortunées"),
-(31, "Funeste Présage"),
-(32, "Héritage d'Outarde"),
-(33, "La Clef Du Cabinet De Barbe Bleu"),
-(34, "La Mort Et Le Malheureux"),
-(35, "Mariage Des Etoiles"),
-(36, "Prophétie De L'Hirondelle");
+(20, "Asama-Yama",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Terrain",NULL),
+(21, "Forêt Enchantée D'Homokusai",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Terrain",NULL),
+(22, "Palais D'Otohimé",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Terrain",NULL),
+(23, "Aki, La petite voleuse",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
+(24, "Talisman De l'Asama-Yama",0,0,NULL, "Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
+(25, "Plutôt Souffrir Que Mourir",0,0,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
+(26, "En Société Avec Le Lion",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Piège",NULL),
+(27, "L'amour De Nikkô",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(28, "Boite D'Otohimé",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(29, "Malédiction Du Génie De Corée",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(30, "Cabinet Des Princesses Infortunées",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(31, "Funeste Présage",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(32, "Héritage d'Outarde",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(33, "La Clef Du Cabinet De Barbe Bleu",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(34, "La Mort Et Le Malheureux",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(35, "Mariage Des Etoiles",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
+(36, "Prophétie De L'Hirondelle",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL);
 
 --
 -- Index pour les tables exportées
