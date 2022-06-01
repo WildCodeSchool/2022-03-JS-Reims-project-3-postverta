@@ -16,16 +16,35 @@ const card = {
 
 export default function Card() {
   return (
-    <div className="card">
+    <article className="card">
+      <header>
+        <h1 className="card__name">{card.name}</h1>
+        <span
+          className="card__stars"
+          style={{ paddingLeft: `${card.starCount}rem` }}
+        >
+          {card.starCount} star(s)
+        </span>
+      </header>
       <figure className="card__figure">
-        <h2>{card.name}</h2>
-        <img src="https://picsum.photos/200" alt="Quentin" />
+        <img
+          className="card__img"
+          src="https://picsum.photos/200"
+          alt="Quentin"
+        />
         <figcaption className="card__figcaption">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis
-          suscipit eaque?
+          <p className="card__type">
+            [ {card.class} ({card.pv}pv) ]
+          </p>
+          <p className="card__type">
+            {card.type}/ {card.element}
+          </p>
+          <p className="card__skill">{card.skill}</p>
+          <p className="card__stats">
+            ATK /{card.attack} DEF /{card.defense}
+          </p>
         </figcaption>
       </figure>
-    </div>
+    </article>
   );
 }
