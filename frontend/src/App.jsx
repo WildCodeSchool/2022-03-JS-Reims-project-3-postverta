@@ -3,6 +3,7 @@ import UserList from "./components/UserList";
 import Card from "./components/Card";
 import Home from "./pages/Home";
 import User from "./components/User";
+import NavBar from "./components/NavBar";
 
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
       <Cardlist />
       <Card />
       <Home />
+      <NavBar />
     </div>
   );
 }
