@@ -35,7 +35,7 @@ CREATE TABLE `card` (
   `skill` varchar(250),
   `type` varchar(100),
   `element` varchar(100),
-  `class` varchar(100),
+  `classe` varchar(100),
   `starCount` INT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,7 +43,7 @@ CREATE TABLE `card` (
 -- Contenu de la table `Card`
 --
 
-INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `element`, `class`, `starCount`) VALUES
+INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `element`, `classe`, `starCount`) VALUES
 (1, "La Cigale Chanteuse", 2, 2, 6, "Lorem ipsum dolor sit amet.", "Insecte", "Terre", "Gardien Normal", 1),
 (2, "Maitre Corbeau", 6, 2, 6, "Lorem ipsum dolor sit amet.", "Oiseau", "Air", "Gardien Normal", 1),
 (3, "Barbe Bleu", 5, 10, 15, "Lorem ipsum dolor sit amet.", "Guerrier", "Terre", "Gardien De Synthèse", 3),
@@ -67,8 +67,8 @@ INSERT INTO `card` (`id`, `name`,`attack`, `defense`, `pv`, `skill`, `type`, `el
 (21, "Forêt Enchantée D'Homokusai",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Terrain",NULL),
 (22, "Palais D'Otohimé",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Terrain",NULL),
 (23, "Aki, La petite voleuse",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
-(24, "Talisman De l'Asama-Yama",0,0,NULL, "Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
-(25, "Plutôt Souffrir Que Mourir",0,0,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
+(24, "Talisman De l'Asama-Yama",NULL,NULL,NULL, "Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
+(25, "Plutôt Souffrir Que Mourir",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Clé",NULL),
 (26, "En Société Avec Le Lion",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Piège",NULL),
 (27, "L'amour De Nikkô",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
 (28, "Boite D'Otohimé",NULL,NULL,NULL,"Lorem ipsum dolor sit amet.",NULL,NULL,"Carte Magie",NULL),
