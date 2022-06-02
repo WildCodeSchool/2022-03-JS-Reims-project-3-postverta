@@ -1,20 +1,7 @@
+import propTypes from "prop-types";
 import "./Card.css";
 
-export default function Card() {
-  const card = {
-    id: 1,
-    name: "Maître Loup",
-    attack: 5,
-    defense: 8,
-    pv: 10,
-    skill:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam, quidem, doloremque, quas, quos, doloribus, voluptate, eum, quia, eius. ",
-    type: "oiseau",
-    element: "feu",
-    class: "terrain",
-    starCount: "3",
-  };
-
+export default function Card({ card }) {
   return (
     <article className={`card ${card.class}`}>
       <header>
@@ -48,3 +35,33 @@ export default function Card() {
     </article>
   );
 }
+
+Card.propTypes = {
+  card: propTypes.shape({
+    id: propTypes.number.isRequired,
+    name: propTypes.string.isRequired,
+    class: propTypes.string.isRequired,
+    pv: propTypes.number,
+    type: propTypes.string,
+    element: propTypes.string,
+    skill: propTypes.string,
+    attack: propTypes.number,
+    defense: propTypes.number,
+    starCount: propTypes.number,
+  }),
+};
+
+Card.defaultProps = {
+  card: {
+    id: 0,
+    name: "",
+    class: "",
+    starCount: 0,
+    pv: 0,
+    type: "",
+    element: "",
+    skill: "",
+    attack: 0,
+    defense: 0,
+  },
+};
