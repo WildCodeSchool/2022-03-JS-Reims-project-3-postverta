@@ -1,41 +1,61 @@
-.gardien {
+.Gardien {
   background-color: #202223;
   color: #fff;
 }
-.gardien .card__figcaption {
+.Gardien .card__figcaption {
   background-color: lightgray;
   color: black;
 }
 
-.cle {
+.Clé {
   background-color: #f3f1ef;
 }
-.cle .card__figcaption {
+.Clé .card__figcaption {
   background-color: whitesmoke;
 }
-.terrain {
+.Clé .card__stats,
+.card__type {
+  display: none;
+}
+
+.Terrain {
   background-color: #a3a5a4;
 }
 
-.terrain .card__figcaption {
+.Terrain .card__figcaption {
   background-color: #d2d6d4;
 }
+.Terrain .card__stats,
+.card__type {
+  display: none;
+}
 
-.piege {
+.Piège {
   background-color: #9d3c7a;
 }
-.piege .card__figcaption {
+.Piège .card__figcaption {
   background-color: #dda0ba;
 }
+.Piège .card__stats,
+.card__type {
+  display: none;
+}
 
-.magie {
+.Magie {
   background-color: #018e78;
 }
-.magie .card__figcaption {
+.Magie .card__figcaption {
   background-color: #c2ddd7;
+}
+.Magie .card__stats,
+.card__type {
+  display: none;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
   border: 1px solid black;
   margin: 1rem;
 }
@@ -52,6 +72,11 @@
   margin-top: 0.2rem;
   font-size: large;
 }
+.card__figure {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
 .card__figcaption {
   margin: 0.5rem;
   border: 3px solid #d5a62a;
@@ -61,7 +86,7 @@
   display: flex;
   border-top: 1px solid black;
   margin: 0.5rem;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .card__name {
   border-top: 2px solid black;
@@ -78,4 +103,7 @@
   background-image: url("../assets/img/star-black.png");
   background-size: contain;
   background-repeat: repeat-x;
+}
+header {
+  padding-left: 1rem;
 }
