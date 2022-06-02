@@ -42,9 +42,7 @@
 .card__img {
   border: 5px solid grey;
 }
-.card__skill {
-  font-size: small;
-}
+.card__skill,
 .card__type {
   font-size: small;
 }
