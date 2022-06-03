@@ -1,53 +1,56 @@
-.Gardien {
+.gardien-normal,
+.gardien-de-synthese,
+.gardien-de-support,
+.gardien-a-talent {
   background-color: #202223;
   color: #fff;
 }
-.Gardien .card__figcaption {
+.gardien .card__figcaption {
   background-color: lightgray;
   color: black;
 }
 
-.Clé {
+.cle {
   background-color: #f3f1ef;
 }
-.Clé .card__figcaption {
+.cle .card__figcaption {
   background-color: whitesmoke;
 }
-.Clé .card__stats,
+.cle .card__stats,
 .card__type {
   display: none;
 }
 
-.Terrain {
+.terrain {
   background-color: #a3a5a4;
 }
 
-.Terrain .card__figcaption {
+.terrain .card__figcaption {
   background-color: #d2d6d4;
 }
-.Terrain .card__stats,
+.terrain .card__stats,
 .card__type {
   display: none;
 }
 
-.Piège {
+.piege {
   background-color: #9d3c7a;
 }
-.Piège .card__figcaption {
+.piege .card__figcaption {
   background-color: #dda0ba;
 }
-.Piège .card__stats,
+.piege .card__stats,
 .card__type {
   display: none;
 }
 
-.Magie {
+.magie {
   background-color: #018e78;
 }
-.Magie .card__figcaption {
+.magie .card__figcaption {
   background-color: #c2ddd7;
 }
-.Magie .card__stats,
+.magie .card__stats,
 .card__type {
   display: none;
 }
