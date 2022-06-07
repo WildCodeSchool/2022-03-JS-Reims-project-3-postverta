@@ -13,7 +13,6 @@ export default function slugify(original) {
   for (let i = 0; i < from.length; i += 1) {
     slug = slug.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
   }
-
   // Remove invalid chars
   slug = slug
     .replace(/[^a-z0-9 -]/g, "")
