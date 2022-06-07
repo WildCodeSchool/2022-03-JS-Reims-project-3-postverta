@@ -108,7 +108,7 @@ CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `password` varchar(150) NOT NULL
+  `password` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
