@@ -1,10 +1,10 @@
 import propTypes from "prop-types";
-import Slugify from "../services/Slugify";
+import slugify from "../services/slugify";
 import "./Card.css";
 
 export default function Card({ card }) {
   return (
-    <article className={`card ${Slugify(card.classe)}`}>
+    <article className={`card ${slugify(card.classe)}`}>
       <header>
         <h1 className="card__name">{card.name}</h1>
         <span
