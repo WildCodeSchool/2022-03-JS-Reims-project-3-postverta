@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RegisterPage from "./pages/RegisterPage";
+import Register from "./pages/Register";
 import Library from "./pages/Library";
 import Game from "./pages/Game";
 import Deck from "./pages/Deck";
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<RegisterPage />} />
+          <Route path="/" element={<Register />} />
           <Route path="/library" element={<Library />} />
           <Route path="/game" element={<Game />} />
           <Route path="/deck" element={<Deck />} />
