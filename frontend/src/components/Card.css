@@ -1,4 +1,7 @@
-.gardien {
+.gardien-normal,
+.gardien-de-synthese,
+.gardien-de-support,
+.gardien-a-talent {
   background-color: #202223;
   color: #fff;
 }
@@ -13,12 +16,21 @@
 .cle .card__figcaption {
   background-color: whitesmoke;
 }
+.cle .card__stats,
+.card__type {
+  display: none;
+}
+
 .terrain {
   background-color: #a3a5a4;
 }
 
 .terrain .card__figcaption {
   background-color: #d2d6d4;
+}
+.terrain .card__stats,
+.card__type {
+  display: none;
 }
 
 .piege {
@@ -27,6 +39,10 @@
 .piege .card__figcaption {
   background-color: #dda0ba;
 }
+.piege .card__stats,
+.card__type {
+  display: none;
+}
 
 .magie {
   background-color: #018e78;
@@ -34,11 +50,18 @@
 .magie .card__figcaption {
   background-color: #c2ddd7;
 }
+.magie .card__stats,
+.card__type {
+  display: none;
+}
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
   border: 1px solid black;
   margin: 1rem;
-  width: 250px;
+  width: 265px;
 }
 .card__img {
   border: 5px solid grey;
@@ -53,6 +76,11 @@
   margin-top: 0.2rem;
   font-size: large;
 }
+.card__figure {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
 .card__figcaption {
   margin: 0.5rem;
   border: 3px solid #d5a62a;
@@ -62,7 +90,7 @@
   display: flex;
   border-top: 1px solid black;
   margin: 0.5rem;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .card__name {
   border-top: 2px solid black;
@@ -79,4 +107,7 @@
   background-image: url("../assets/img/star-black.png");
   background-size: contain;
   background-repeat: repeat-x;
+}
+header {
+  padding-left: 1rem;
 }
