@@ -2,8 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
-  console.warn(location);
-  return (
+  console.warn(location); // display current location in console
+  return location.pathname !== "/" ? (
     <nav className="navbar">
       <ul className="navList">
         <li>
@@ -33,5 +33,5 @@ export default function Navbar() {
         </li>
       </ul>
     </nav>
-  );
+  ) : null;
 }
