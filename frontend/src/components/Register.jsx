@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function User() {
+export default function Register() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -22,7 +22,7 @@ export default function User() {
           },
           body: JSON.stringify(user),
         }).then((response) => {
-          alert(response.status);
+          console.warn(response.status);
         });
       }}
     >
