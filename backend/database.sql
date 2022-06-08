@@ -108,7 +108,7 @@ CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `password` varchar(150) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -116,8 +116,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, "Louis", "louis@wild.com", "Wild51"),
-(2, "Quentin", "quentin@wild.com", "Wild99");
+(1, "Louis", "louis@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ"),
+(2, "Quentin", "quentin@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ");
 
 --
 -- Index pour les tables exportées
