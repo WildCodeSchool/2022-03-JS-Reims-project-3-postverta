@@ -4,6 +4,7 @@ import Library from "./pages/Library";
 import Game from "./pages/Game";
 import Deck from "./pages/Deck";
 import Account from "./pages/Account";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/deck" element={<Deck />} />
           <Route path="/account" element={<Account />} />
         </Routes>
+        <Navbar />
       </Router>
     </div>
   );
