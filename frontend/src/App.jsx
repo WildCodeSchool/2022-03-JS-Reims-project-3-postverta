@@ -1,5 +1,5 @@
 import Cardlist from "./components/CardList";
-import Home from "./pages/Home";
+import Card from "./components/Card";
 import NavBar from "./components/NavBar";
 import User from "./components/User";
 import UserList from "./components/UserList";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Cardlist />
-      <Home />
+      <Card />
       <User />
       <UserList />
       <NavBar />
