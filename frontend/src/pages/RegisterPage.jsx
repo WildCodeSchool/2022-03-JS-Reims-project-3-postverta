@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
-  return <Link to="/account">Account</Link>;
+  return <Link to="/account">Compte utilisateur</Link>;
 }

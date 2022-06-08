@@ -6,17 +6,17 @@ export default function Navbar() {
       <ul className="navList">
         <li>
           <Link to="/" className="navLink">
-            Register Page
+            Page d'inscription
           </Link>
         </li>
         <li>
           <Link to="/library" className="navLink">
-            Library
+            Bibliothèque
           </Link>
         </li>
         <li>
           <Link to="/game" className="navLink">
-            Game
+            Jeu
           </Link>
         </li>
         <li>
@@ -26,7 +26,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link to="/account" className="navLink">
-            Account
+            Compte utilisateur
           </Link>
         </li>
       </ul>
