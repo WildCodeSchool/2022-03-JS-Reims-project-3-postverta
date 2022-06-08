@@ -38,6 +38,7 @@
 .card {
   border: 1px solid black;
   margin: 1rem;
+  width: 250px;
 }
 .card__img {
   border: 5px solid grey;

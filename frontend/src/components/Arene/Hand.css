@@ -1,0 +1,76 @@
+.hands {
+  height: 100vh;
+  width: 10vw;
+  display: flex;
+}
+
+.hand_card {
+  display: flex;
+  list-style-type: none;
+}
+
+.hand_card > li {
+  display: inline;
+}
+
+.gard {
+  background-color: #202223;
+  color: #fff;
+  border: 3px solid #d5a62a;
+}
+
+.trap {
+  background-color: #9d3c7a;
+  border: 3px solid #d5a62a;
+}
+
+.mage {
+  background-color: #018e78;
+  border: 3px solid #d5a62a;
+}
+
+.ground {
+  background-color: #a3a5a4;
+  color: #fff;
+  border: 3px solid #d5a62a;
+}
+
+.key {
+  background-color: #f3f1ef;
+  border: 3px solid #d5a62a;
+}
+
+.gard_fc {
+  margin: 0.5rem;
+  border: 3px solid #d5a62a;
+  background-color: lightgray;
+}
+
+.mage_fc {
+  margin: 0.5rem;
+  border: 3px solid #d5a62a;
+  background-color: lightgray;
+}
+
+.trap_fc {
+  margin: 0.5rem;
+  border: 3px solid #d5a62a;
+  background-color: lightgray;
+}
+
+.ground_fc {
+  margin: 0.5rem;
+  border: 3px solid #d5a62a;
+  background-color: lightgray;
+}
+
+.key_fc {
+  margin: 0.5rem;
+  border: 3px solid #d5a62a;
+  background-color: lightgray;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+}
