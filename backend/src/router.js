@@ -1,7 +1,7 @@
 const express = require("express");
 const { UserController } = require("./controllers");
 const { CardController } = require("./controllers");
-const { hashPassword } = require("./services/auth");
+const { hashPassword, login } = require("./services/auth");
 
 const router = express.Router();
 
@@ -15,6 +15,7 @@ router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
 router.put("/users/:id", UserController.edit);
 router.post("/users", hashPassword, UserController.add);
+router.post("/login", login);
 router.delete("/users/:id", UserController.delete);
 
 module.exports = router;

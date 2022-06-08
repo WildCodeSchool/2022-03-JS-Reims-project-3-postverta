@@ -1,4 +1,6 @@
 const argon2 = require("argon2");
+const jwt = require("jsonwebtoken");
+const models = require("../models");
 
 const hashinOptions = {
   type: argon2.argon2id,
@@ -14,11 +16,28 @@ const hashPassword = (req, res, next) => {
   });
 };
 
-const verifyPassword = (plainPassword, hashedPassword) => {
-  return argon2.verify(hashedPassword, plainPassword, hashinOptions);
+const login = (req, res) => {
+  const { email, password } = req.body;
+  models.user.findPasswordByEmail(email).then(([rows]) => {
+    const user = rows[0];
+    if (user) {
+      const hashedPassword = user.password;
+
+      argon2.verify(hashedPassword, password, hashinOptions).then((ok) => {
+        if (ok) {
+          const token = jwt.sign({ email }, process.env.PRIVATE_KEY, {
+            expiresIn: "1h",
+          });
+          res.json({ token });
+        } else {
+          res.sendStatus(403);
+        }
+      });
+    }
+  });
 };
 
 module.exports = {
   hashPassword,
-  verifyPassword,
+  login,
 };
