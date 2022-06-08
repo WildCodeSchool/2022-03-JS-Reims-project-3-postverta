@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
-  return <p>Register</p>;
+  return <Link to="/account">Compte utilisateur</Link>;
 }

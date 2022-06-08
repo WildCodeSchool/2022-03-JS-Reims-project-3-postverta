@@ -1,3 +1,3 @@
 export default function Game() {
-  return <p> Game</p>;
+  return <p>Jeu</p>;
 }

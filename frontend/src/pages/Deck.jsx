@@ -1,3 +1,5 @@
+import CardList from "../components/CardList";
+
 export default function Deck() {
-  return <p>Deck</p>;
+  return <CardList />;
 }
