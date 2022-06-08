@@ -1,4 +1,8 @@
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import RegisterPage from "../pages/RegisterPage";
+import Library from "../pages/Library";
+import Game from "../pages/Game";
+import Deck from "../pages/Deck";
 
 export default function Navbar() {
   return (
@@ -6,18 +10,18 @@ export default function Navbar() {
       <nav className="navbar">
         <ul className="navList">
           <li>
-            <Link to="/Home" className="navLink">
-              Home
+            <Link to="/RegisterPage" className="navLink">
+              Register Page
             </Link>
           </li>
           <li>
-            <Link to="/Bibliothèque" className="navLink">
-              Bibliothèque
+            <Link to="/Library" className="navLink">
+              Library
             </Link>
           </li>
           <li>
-            <Link to="/Arena" className="navLink">
-              Arena
+            <Link to="/Game" className="navLink">
+              Game
             </Link>
           </li>
           <li>
@@ -27,6 +31,13 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+      <Routes>
+        <Route path="/" element={<RegisterPage />} />
+        <Route path="/Library" element={<Library />} />
+        <Route path="/Game" element={<Game />} />
+        <Route path="/Deck" element={<Deck />} />
+        <Route path="/RegisterPage" element={<RegisterPage />} />
+      </Routes>
     </Router>
   );
 }
