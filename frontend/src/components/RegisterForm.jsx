@@ -2,10 +2,13 @@ import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Register() {
+export default function RegisterForm() {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const pseudoRef = useRef();
+  const genderRef = useRef();
+  const birthdateRef = useRef();
 
   return (
     <form
@@ -15,6 +18,9 @@ export default function Register() {
 
         const user = {
           name: nameRef.current.value,
+          pseudo: pseudoRef.current.value,
+          birthdate: birthdateRef.current.value,
+          gender: genderRef.current.value,
           email: emailRef.current.value,
           password: passwordRef.current.value,
         };
@@ -49,7 +55,16 @@ export default function Register() {
         placeholder="John Doe"
         required="required"
       />
-
+      <label htmlFor="name">Pseudo :</label>
+      <input
+        ref={pseudoRef}
+        id="pseudo"
+        type="text"
+        name="pseudo"
+        className="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-300 border rounded-lg focus:shadow-outline"
+        placeholder="JohnDoe78"
+        required="required"
+      />
       <label htmlFor="email">Email :</label>
       <input
         ref={emailRef}
@@ -60,7 +75,44 @@ export default function Register() {
         placeholder="johndoe@mail.com"
         required="required"
       />
-
+      <label htmlFor="gender">Genre :</label>
+      <input
+        ref={genderRef}
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Homme"
+        className="m-3"
+      />
+      Homme
+      <input
+        ref={genderRef}
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Femme"
+        className="m-3"
+      />
+      Femme
+      <input
+        ref={genderRef}
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Autre"
+        className="m-3"
+      />
+      Autre
+      <br />
+      <label htmlFor="birthday">Date de naissance :</label>
+      <input
+        ref={birthdateRef}
+        id="birthday"
+        type="date"
+        name="birthdate"
+        className="w-full h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+        required="required"
+      />
       <label htmlFor="password">Mot de passe :</label>
       <input
         ref={passwordRef}
