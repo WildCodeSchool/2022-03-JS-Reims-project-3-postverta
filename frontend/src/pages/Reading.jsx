@@ -1,3 +1,3 @@
 export default function Reading() {
-  return <p>Reading</p>;
+  return <p>Lecture</p>;
 }
