@@ -1,3 +1,9 @@
+import Arena from "../components/Arena/Arena";
+
 export default function Game() {
-  return <p>Jeu</p>;
+  return (
+    <>
+      <Arena />;
+    </>
+  );
 }
