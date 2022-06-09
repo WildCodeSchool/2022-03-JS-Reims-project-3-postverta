@@ -72,7 +72,7 @@ export default function Register() {
       />
       <button
         type="submit"
-        className="w-full h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+        className="w-full h-10 px-3 mb-2 text-base text-white border rounded-lg focus:shadow-outline"
       >
         Register
       </button>
