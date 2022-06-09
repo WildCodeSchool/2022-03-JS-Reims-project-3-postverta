@@ -75,35 +75,42 @@ export default function RegisterForm() {
         placeholder="johndoe@mail.com"
         required="required"
       />
-      <label htmlFor="gender">Genre :</label>
-      <input
-        ref={genderRef}
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Homme"
-        className="m-3"
-      />
-      Homme
-      <input
-        ref={genderRef}
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Femme"
-        className="m-3"
-      />
-      Femme
-      <input
-        ref={genderRef}
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Autre"
-        className="m-3"
-      />
-      Autre
-      <br />
+      <fieldset>
+        <legend>Genre :</legend>
+        <div>
+          <input
+            ref={genderRef}
+            type="radio"
+            id="man"
+            name="gender"
+            value="homme"
+            className="m-3"
+          />
+          <label htmlFor="man">Homme</label>
+        </div>
+        <div>
+          <input
+            ref={genderRef}
+            type="radio"
+            id="woman"
+            name="gender"
+            value="femme"
+            className="m-3"
+          />
+          <label htmlFor="woman">Femme</label>
+        </div>
+        <div>
+          <input
+            ref={genderRef}
+            type="radio"
+            id="other"
+            name="gender"
+            value="autre"
+            className="m-3"
+          />
+          <label htmlFor="other">Autre</label>
+        </div>
+      </fieldset>
       <label htmlFor="birthday">Date de naissance :</label>
       <input
         ref={birthdateRef}
