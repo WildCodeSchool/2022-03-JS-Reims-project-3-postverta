@@ -58,7 +58,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 16rem;
   border: 1px solid black;
   margin: 1rem;
   width: 265px;

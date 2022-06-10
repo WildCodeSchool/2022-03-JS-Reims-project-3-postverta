@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import RegisterForm from "../components/RegisterForm";
+import LoginForm from "../components/LoginForm";
 import blacklogo from "../assets/img/logo-black.jpg";
 
 export default function Register() {
@@ -8,6 +9,7 @@ export default function Register() {
       <img src={blacklogo} alt="logo" />
       <Link to="/account">Compte utilisateur</Link>
       <RegisterForm />
+      <LoginForm />
     </div>
   );
 }
