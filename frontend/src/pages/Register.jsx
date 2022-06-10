@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import RegisterForm from "../components/RegisterForm";
+import blacklogo from "../assets/img/logo-black.jpg";
 
 export default function Register() {
   return (
     <div className="bg-black text-white">
-      <img src="../../src/assets/img/logo-black.jpg" alt="logo" />
+      <img src={blacklogo} alt="logo" />
       <Link to="/account">Compte utilisateur</Link>
       <RegisterForm />
     </div>
