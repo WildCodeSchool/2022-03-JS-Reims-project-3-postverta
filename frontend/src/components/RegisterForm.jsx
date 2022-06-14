@@ -9,7 +9,7 @@ export default function Register() {
 
   return (
     <form
-      className="p-8"
+      className="p-8 bg-black text-white min-h-screen flex flex-col justify-center items-center "
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -72,9 +72,9 @@ export default function Register() {
       />
       <button
         type="submit"
-        className="w-full h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+        className=" m-2 text-base px-10 py-2  border rounded-lg"
       >
-        Register
+        S'inscrire
       </button>
       <ToastContainer
         position="top-center"
