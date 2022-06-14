@@ -13,6 +13,10 @@ router.delete("/cards/:id", CardController.delete);
 
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
+router.get("/users/:id/cards", UserController.readCards);
+// router.post("/users/:id/cards", UserController.???);
+// router.put("/users/:user_id/cards/:card_id", UserController.???);
+// router.delete("/users/:user_id/cards/:card_id", UserController.???);
 router.put("/users/:id", UserController.edit);
 router.post("/users", hashPassword, UserController.add);
 router.post("/login", login);
