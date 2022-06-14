@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const passport = require("passport");
 const router = require("./router");
 
 const app = express();
@@ -14,6 +15,8 @@ app.use(
 );
 
 app.use(express.json());
+
+app.use(passport.initialize());
 
 // Serve the public folder for public resources
 app.use(express.static(path.join(__dirname, "../public")));
