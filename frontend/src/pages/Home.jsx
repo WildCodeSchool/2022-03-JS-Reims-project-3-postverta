@@ -9,13 +9,13 @@ export default function Home() {
 
       <Link
         to="/login"
-        className="btn btn-primary px-3 border rounded-lg m-5 px-32 py-2"
+        className="btn btn-primary border rounded-lg m-5 px-32 py-2"
       >
         Connexion
       </Link>
       <Link
         to="/register"
-        className="btn btn-primary px-3 border rounded-lg m-5 px-32 py-2 "
+        className="btn btn-primary border rounded-lg m-5 px-32 py-2 "
       >
         Inscription
       </Link>
