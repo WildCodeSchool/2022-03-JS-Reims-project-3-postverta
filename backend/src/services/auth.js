@@ -17,7 +17,7 @@ const hashPassword = (req, res, next) => {
 };
 
 const login = (req, res) => {
-  const { email, password } = req.body;
+  const { name, pseudo, birthdate, gender, email, password } = req.body;
   models.user.findPasswordByEmail(email).then(([rows]) => {
     const user = rows[0];
     if (user) {
@@ -25,9 +25,13 @@ const login = (req, res) => {
 
       argon2.verify(hashedPassword, password, hashinOptions).then((ok) => {
         if (ok) {
-          const token = jwt.sign({ email }, process.env.PRIVATE_KEY, {
-            expiresIn: "1h",
-          });
+          const token = jwt.sign(
+            { name, pseudo, birthdate, gender, email },
+            process.env.JWT_SECRET,
+            {
+              expiresIn: "1h",
+            }
+          );
           res.json({ token });
         } else {
           res.sendStatus(403);
