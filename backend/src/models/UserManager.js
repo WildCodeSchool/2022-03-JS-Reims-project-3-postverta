@@ -10,7 +10,7 @@ class UserManager extends AbstractManager {
     );
   }
 
-  findUserByEmail(email) {
+  findByEmail(email) {
     return this.connection.query(
       `select id, name, pseudo, birthdate, gender, email, password from  ${this.table} where email = ?`,
       [email]

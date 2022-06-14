@@ -18,8 +18,8 @@ const hashPassword = (req, res, next) => {
 
 const login = (req, res) => {
   const { email, password } = req.body;
-  models.user.findUserByEmail(email).then(([SQLres]) => {
-    const user = SQLres[0];
+  models.user.findByEmail(email).then(([rows]) => {
+    const user = rows[0];
     if (user) {
       const hashedPassword = user.password;
 
