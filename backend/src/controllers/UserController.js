@@ -29,6 +29,18 @@ class UserController {
       });
   };
 
+  static readCards = (req, res) => {
+    models.card
+      .findByUser(req.params.id)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static edit = (req, res) => {
     const user = req.body;
 
