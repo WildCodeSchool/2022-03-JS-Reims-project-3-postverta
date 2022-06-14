@@ -18,9 +18,9 @@ export default function Hand() {
 
   return (
     <div className=" flex ">
-      <ul className="flex list-none ">
+      <ul className="flex list-none">
         {hand.map((card) => (
-          <li className="inline w-100 " key={card.id}>
+          <li className="inline" key={card.id}>
             <Card card={card} />
           </li>
         ))}
