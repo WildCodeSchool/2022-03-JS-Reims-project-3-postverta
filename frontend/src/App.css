@@ -2,24 +2,3 @@
   margin: 0;
   padding: 0;
 }
-
-.navbar {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-}
-
-.navList {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  color: black;
-  list-style-type: none;
-}
-
-.navLink {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  text-justify: center;
-}

@@ -4,30 +4,30 @@ export default function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/login", "/register"];
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="navbar">
-      <ul className="navList">
+    <nav className="bg-white w-screen fixed bottom-0">
+      <ul className="flex justify-around">
         <li>
-          <Link to="/" className="navLink">
+          <Link to="/" className="">
             Page d'inscription
           </Link>
         </li>
         <li>
-          <Link to="/library" className="navLink">
+          <Link to="/library" className="">
             Bibliothèque
           </Link>
         </li>
         <li>
-          <Link to="/game" className="navLink">
+          <Link to="/game" className="">
             Jeu
           </Link>
         </li>
         <li>
-          <Link to="/deck" className="navLink">
+          <Link to="/deck" className="">
             Deck
           </Link>
         </li>
         <li>
-          <Link to="/account" className="navLink">
+          <Link to="/account" className="">
             Compte utilisateur
           </Link>
         </li>
