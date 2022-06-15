@@ -79,6 +79,23 @@ class UserController {
       });
   };
 
+  static addCard = (req, res) => {
+    const userId = req.params.id;
+    const { cardId } = req.body;
+
+    // TODO validations (length, format...)
+
+    models.carduser
+      .insertCard(userId, cardId)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static delete = (req, res) => {
     models.user
       .delete(req.params.id)
