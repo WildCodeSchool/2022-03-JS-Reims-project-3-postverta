@@ -9,35 +9,33 @@ const getActiveLinkStyle = ({ isActive }) => {
       paddingRight: "0.5rem",
     };
   }
-  return {};
+  return { paddingLeft: "0.5rem", paddingRight: "0.5rem" };
 };
 
 export default function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/login", "/register"];
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="font-['Sansita-Regular'] bg-white w-screen px-1">
-      <div className="flex justify-between text-center text-sm">
-        <NavLink style={getActiveLinkStyle} to="/">
-          Page d'inscription
-        </NavLink>
+    <nav className="font-['Sansita-Regular'] bg-white w-screen flex justify-between text-center text-xs">
+      <NavLink style={getActiveLinkStyle} to="/">
+        Page d'inscription
+      </NavLink>
 
-        <NavLink style={getActiveLinkStyle} to="/library">
-          Bibliothèque
-        </NavLink>
+      <NavLink style={getActiveLinkStyle} to="/library">
+        Bibliothèque
+      </NavLink>
 
-        <NavLink style={getActiveLinkStyle} to="/game">
-          Jeu
-        </NavLink>
+      <NavLink style={getActiveLinkStyle} to="/game">
+        Jeu
+      </NavLink>
 
-        <NavLink style={getActiveLinkStyle} to="/deck">
-          Deck
-        </NavLink>
+      <NavLink style={getActiveLinkStyle} to="/deck">
+        Deck
+      </NavLink>
 
-        <NavLink style={getActiveLinkStyle} to="/account">
-          Compte utilisateur
-        </NavLink>
-      </div>
+      <NavLink style={getActiveLinkStyle} to="/account">
+        Compte utilisateur
+      </NavLink>
     </nav>
   );
 }
