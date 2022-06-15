@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
-  console.warn(location); // display current location in console
   return location.pathname !== "/" ? (
     <nav className="navbar">
       <ul className="navList">
