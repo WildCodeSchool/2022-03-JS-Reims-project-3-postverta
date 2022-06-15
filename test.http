@@ -1,0 +1,10 @@
+GET http://google.com
+
+###
+
+POST http://localhost:5000/users/1/cards
+Content-Type: application/json
+
+{
+    "cardId": 36
+}
