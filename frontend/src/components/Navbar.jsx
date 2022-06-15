@@ -2,35 +2,36 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
-  return location.pathname !== "/" ? (
-    <nav className="navbar">
-      <ul className="navList">
+  const noNavbarPaths = ["/", "/login", "/register"];
+  return noNavbarPaths.includes(location.pathname) ? null : (
+    <nav className="bg-white w-screen p-1">
+      <ul className="flex justify-between text-center text-sm">
         <li>
-          <Link to="/" className="navLink">
+          <Link to="/" className="">
             Page d'inscription
           </Link>
         </li>
         <li>
-          <Link to="/library" className="navLink">
+          <Link to="/library" className="">
             Bibliothèque
           </Link>
         </li>
         <li>
-          <Link to="/game" className="navLink">
+          <Link to="/game" className="">
             Jeu
           </Link>
         </li>
         <li>
-          <Link to="/deck" className="navLink">
+          <Link to="/deck" className="">
             Deck
           </Link>
         </li>
         <li>
-          <Link to="/account" className="navLink">
+          <Link to="/account" className="">
             Compte utilisateur
           </Link>
         </li>
       </ul>
     </nav>
-  ) : null;
+  );
 }

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Sansita-Regular";
+  src: url("assets/fonts/Sansita-Regular.ttf") format("truetype");
+}
+
+.App > :first-child {
+  flex-grow: 1;
+  overflow: auto;
+}
