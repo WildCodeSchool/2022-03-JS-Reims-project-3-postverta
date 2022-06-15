@@ -3,7 +3,7 @@ import logoBlack from "../assets/img/logo-black.jpg";
 
 export default function Home() {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col justify-center items-center ">
+    <div className="font-['Sansita-Regular'] bg-black text-white flex flex-col justify-center items-center ">
       <h1 className="text-7xl  ">Postverta</h1>
       <img src={logoBlack} alt="logo" className="m-3" />
 
