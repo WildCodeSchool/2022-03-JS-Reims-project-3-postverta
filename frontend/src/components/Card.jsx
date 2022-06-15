@@ -4,11 +4,11 @@ import "./Card.css";
 
 export default function Card({ card }) {
   return (
-    <article className={`card ${slugify(card.classe)}`}>
+    <article className={`card p-4 ${slugify(card.classe)}`}>
       <header>
-        <h1 className="card__name">{card.name}</h1>
+        <h1 className="card__name p-4 mb-4">{card.name}</h1>
         <span
-          className="card__stars"
+          className="card__stars mb-4"
           style={{ paddingLeft: `${card.starCount}rem` }}
         >
           {card.starCount} star(s)
@@ -16,16 +16,16 @@ export default function Card({ card }) {
       </header>
       <figure className="card__figure">
         <img
-          className="card__img"
+          className="card__img mb-4"
           src="https://picsum.photos/200"
           alt="Quentin"
         />
-        <figcaption className="card__figcaption">
-          <p className="card__class">[ {card.classe} ]</p>
-          <p className="card__type">
+        <figcaption className="card__figcaption p-2">
+          <p className="card__class mb-2">[ {card.classe} ]</p>
+          <p className="card__type mb-2">
             {card.type}/ {card.element}
           </p>
-          <p className="card__skill">{card.skill}</p>
+          <p className="card__skill mb-2">{card.skill}</p>
           <p className="card__stats">
             ({card.pv}pv) ATK /{card.attack} DEF /{card.defense}
           </p>
