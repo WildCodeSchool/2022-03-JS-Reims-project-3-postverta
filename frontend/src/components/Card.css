@@ -59,8 +59,8 @@
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  margin: 1rem;
-  width: 265px;
+  width: 320px;
+  flex-shrink: 0;
 }
 .card__img {
   border: 5px solid grey;
@@ -70,32 +70,25 @@
   font-size: small;
 }
 .card__class {
-  display: flex;
-  margin-left: 0.2rem;
-  margin-top: 0.2rem;
   font-size: large;
 }
 .card__figure {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  flex-grow: 1;
 }
 .card__figcaption {
-  margin: 0.5rem;
   border: 3px solid #d5a62a;
   background-color: lightgray;
+  flex-grow: 1;
 }
 .card__stats {
-  display: flex;
   border-top: 1px solid black;
-  margin: 0.5rem;
   justify-content: space-between;
 }
 .card__name {
   border-top: 2px solid black;
   border-left: 2px solid black;
-  margin: 1rem;
-  padding-left: 1rem;
 }
 .card__stars {
   content: "";
@@ -106,7 +99,4 @@
   background-image: url("../assets/img/star-black.png");
   background-size: contain;
   background-repeat: repeat-x;
-}
-header {
-  padding-left: 1rem;
 }
