@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-// eslint-disable-next-line import/no-unresolved
 const passport = require("passport");
 const router = require("./router");
 
