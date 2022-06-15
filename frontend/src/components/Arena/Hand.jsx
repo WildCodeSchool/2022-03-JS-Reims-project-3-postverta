@@ -17,14 +17,10 @@ export default function Hand() {
   }, []);
 
   return (
-    <div className=" flex ">
-      <ul className="flex list-none ">
-        {hand.map((card) => (
-          <li className="inline w-100 " key={card.id}>
-            <Card card={card} />
-          </li>
-        ))}
-      </ul>
+    <div className="p-4 gap-4 flex overflow-auto">
+      {hand.map((card) => (
+        <Card key={card.id} card={card} />
+      ))}
     </div>
   );
 }
