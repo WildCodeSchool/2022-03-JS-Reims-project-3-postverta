@@ -2,7 +2,12 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const getActiveLinkStyle = ({ isActive }) => {
   if (isActive) {
-    return { backgroundColor: "black", color: "white" };
+    return {
+      backgroundColor: "black",
+      color: "white",
+      paddingLeft: "0.5rem",
+      paddingRight: "0.5rem",
+    };
   }
   return {};
 };
@@ -11,7 +16,7 @@ export default function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/login", "/register"];
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="bg-white w-screen">
+    <nav className="font-['Sansita-Regular'] bg-white w-screen px-1">
       <div className="flex justify-between text-center text-sm">
         <NavLink style={getActiveLinkStyle} to="/">
           Page d'inscription
