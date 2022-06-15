@@ -1,10 +1,15 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useUserData } from "../context/UserDataContext";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
+  const { setUserData } = useUserData();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
+
   return (
     <form
       className="p-8 bg-black text-white flex flex-col justify-center items-center "
@@ -29,7 +34,9 @@ export default function LoginForm() {
           .then((response) => response.json())
           .then((data) => {
             if (data.token) {
+              setUserData(data.user);
               toast.success("Connexion validé !");
+              navigate("/account");
             } else {
               toast.error("Échec de la connexion !");
             }
