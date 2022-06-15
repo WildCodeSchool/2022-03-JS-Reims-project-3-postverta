@@ -31,7 +31,7 @@ export default function Library() {
       <p className="bg-white bg-opacity-70 text-center">Exemple de livre</p>
       <ul className=" flex flex-wrap justify-center items-center ">
         {books.map((book) => (
-          <li>
+          <li key={book.id}>
             <Book key={book.id} book={book} />
           </li>
         ))}
