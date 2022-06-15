@@ -4,7 +4,7 @@ export default function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/login", "/register"];
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="bg-white w-screen fixed bottom-0 p-1">
+    <nav className="bg-white w-screen p-1">
       <ul className="flex justify-between text-center text-sm">
         <li>
           <Link to="/" className="">
