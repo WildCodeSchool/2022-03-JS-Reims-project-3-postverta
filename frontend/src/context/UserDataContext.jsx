@@ -6,7 +6,7 @@ const UserDataContext = createContext();
 export default UserDataContext;
 
 export function UserDataProvider({ children }) {
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState();
 
   const value = useMemo(() => ({ userData, setUserData }), [userData]);
 

@@ -5,7 +5,7 @@ import { useUserData } from "../context/UserDataContext";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
-  const { setUserData } = useUserData([]);
+  const { setUserData } = useUserData();
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
