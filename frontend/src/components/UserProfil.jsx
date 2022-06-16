@@ -1,0 +1,46 @@
+import { useUserData } from "../context/UserDataContext";
+
+export default function UserProfil() {
+  const { userData } = useUserData();
+
+  function GenderName() {
+    switch (userData.gender) {
+      case "F":
+        return "Femme";
+      case "H":
+        return "Homme";
+      case "O":
+        return "Autre";
+      default:
+        return "Non défini";
+    }
+  }
+
+  return (
+    <div
+      className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken flex justify-center 
+    flex-col"
+    >
+      <p className="bg-white bg-opacity-70 text-center m-5 text-3xl ">
+        Compte utilisateur
+      </p>
+      <p className="bg-white bg-opacity-70 text-center text-xl m-2">
+        Informations :
+      </p>
+      <ul className="bg-white bg-opacity-70 p-2">
+        <li className="m-1">Nom : {userData.name}</li>
+        <li className="m-1">Mail : {userData.email}</li>
+        <li className="m-1">Pseudo : {userData.pseudo}</li>
+        <li className="m-1">
+          Date de naissance :
+          {new Intl.DateTimeFormat("fr-FR", {
+            year: "numeric",
+            month: "long",
+            day: "2-digit",
+          }).format(userData.birthDate)}
+        </li>
+        <li className="m-1">Genre : {GenderName(userData.gender)}</li>
+      </ul>
+    </div>
+  );
+}
