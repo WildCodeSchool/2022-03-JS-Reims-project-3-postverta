@@ -12,7 +12,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="p-8 bg-black text-white flex flex-col justify-center items-center "
+      className="p-8 bg-black text-white flex flex-col justify-center items-center font-['Sansita-Regular']"
       onSubmit={(event) => {
         event.preventDefault();
         const login = {
@@ -36,7 +36,7 @@ export default function LoginForm() {
             if (data.token) {
               setUserData(data.user);
               toast.success("Connexion validé !");
-              navigate("/account");
+              navigate("/library");
             } else {
               toast.error("Échec de la connexion !");
             }
@@ -79,6 +79,13 @@ export default function LoginForm() {
         draggable
         pauseOnHover
       />
+      <button
+        type="button"
+        className=" m-2 text-base px-10 py-2  border rounded-lg"
+        onClick={() => navigate("/")}
+      >
+        Retour a la page d'accueil
+      </button>
     </form>
   );
 }
