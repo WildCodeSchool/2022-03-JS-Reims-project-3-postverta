@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -9,10 +10,11 @@ export default function RegisterForm() {
   const pseudoRef = useRef();
   const genderRef = useRef();
   const birthdateRef = useRef();
+  const navigate = useNavigate();
 
   return (
     <form
-      className="p-8 bg-black text-white flex flex-col justify-center items-center "
+      className="p-8 bg-black text-white flex flex-col justify-center items-center font-['Sansita-Regular']"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -39,6 +41,7 @@ export default function RegisterForm() {
         ).then((response) => {
           if (response.status === 201) {
             toast.success("Inscription  validé !");
+            navigate("/login");
           } else {
             toast.error("Échec de l'inscription !");
           }
@@ -123,6 +126,13 @@ export default function RegisterForm() {
         draggable
         pauseOnHover
       />
+      <button
+        type="button"
+        className=" m-2 text-base px-10 py-2  border rounded-lg"
+        onClick={() => navigate("/")}
+      >
+        Retour a la page d'accueil
+      </button>
     </form>
   );
 }
