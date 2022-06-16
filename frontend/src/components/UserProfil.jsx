@@ -3,19 +3,6 @@ import { useUserData } from "../context/UserDataContext";
 export default function UserProfil() {
   const { userData } = useUserData();
 
-  function GenderName() {
-    switch (userData.gender) {
-      case "F":
-        return "Femme";
-      case "H":
-        return "Homme";
-      case "O":
-        return "Autre";
-      default:
-        return "Non défini";
-    }
-  }
-
   return (
     <div
       className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken flex justify-center 
@@ -39,7 +26,7 @@ export default function UserProfil() {
             day: "2-digit",
           }).format(userData.birthDate)}
         </li>
-        <li className="m-1">Genre : {GenderName(userData.gender)}</li>
+        <li className="m-1">Genre : {userData.gender}</li>
       </ul>
     </div>
   );

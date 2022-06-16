@@ -84,9 +84,9 @@ export default function RegisterForm() {
         className="w-full h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
       >
         <option value="">--Merci de choisir une option --</option>
-        <option value="H">Homme</option>
-        <option value="F">Femme</option>
-        <option value="O">Autre</option>
+        <option value="Homme">Homme</option>
+        <option value="Femme">Femme</option>
+        <option value="Autre">Autre</option>
       </select>
       <label htmlFor="birthday">Date de naissance :</label>
       <input
