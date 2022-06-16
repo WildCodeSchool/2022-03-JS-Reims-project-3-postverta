@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="font-['Sansita-Regular'] bg-black text-white flex flex-col justify-center items-center ">
       <h1 className="text-7xl  ">Postverta</h1>
-      <img src={logoBlack} alt="logo" className="m-3" />
+      <img src={logoBlack} alt="logo" className="m-3 w-80" />
 
       <Link
         to="/login"
