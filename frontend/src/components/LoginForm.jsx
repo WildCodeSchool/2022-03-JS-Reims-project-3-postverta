@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useUserData } from "../context/UserDataContext";
+import HomeLink from "./HomeLink";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
@@ -79,13 +80,7 @@ export default function LoginForm() {
         draggable
         pauseOnHover
       />
-      <button
-        type="button"
-        className=" m-2 text-base px-10 py-2  border rounded-lg"
-        onClick={() => navigate("/")}
-      >
-        Retour a la page d'accueil
-      </button>
+      <HomeLink />
     </form>
   );
 }
