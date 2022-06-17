@@ -6,5 +6,23 @@ POST http://localhost:5000/users/1/cards
 Content-Type: application/json
 
 {
-    "cardId": 36
+    "cardId": 24
+}
+
+###
+
+PUT http://localhost:5000/users/1/cards/36
+Content-Type: application/json
+
+{
+    "active": true
+}
+
+###
+
+DELETE http://localhost:5000/users/1/cards/30
+Content-Type: application/json
+
+{
+    "cardId": 30
 }
