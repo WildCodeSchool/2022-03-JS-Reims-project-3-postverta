@@ -109,7 +109,7 @@ CREATE TABLE `user` (
   `name` varchar(150) NOT NULL,
   `pseudo` varchar(15) NOT NUll,
   `birthdate` DATE,
-  `gender` varchar(1),
+  `gender` varchar(15),
   `email` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -119,8 +119,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `pseudo`, `birthdate`, `gender`, `email`, `password`) VALUES
-(1, "Louis", "Dufour51", "1998-04-07", "Man", "louis@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ"),
-(2, "Quentin", "Quentou51", "1999-07-28", "Man", "quentin@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ");
+(1, "Louis", "Dufour51", "1998-04-07", "Homme", "louis@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ"),
+(2, "Quentin", "Quentou51", "1999-07-28", "Homme", "quentin@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ");
 
 --
 -- Index pour les tables exportées
