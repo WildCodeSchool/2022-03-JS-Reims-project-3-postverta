@@ -63,6 +63,24 @@ class UserController {
       });
   };
 
+  static editCard = (req, res) => {
+    const { userId, cardId } = req.params;
+
+    const { active } = req.body;
+
+    // TODO validations (length, format...)
+
+    models.card_user
+      .updateCard(cardId, userId, active)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const user = req.body;
 
@@ -85,8 +103,8 @@ class UserController {
 
     // TODO validations (length, format...)
 
-    models.carduser
-      .insertCard(userId, cardId)
+    models.card_user
+      .insertCard(cardId, userId)
       .then(() => {
         res.sendStatus(204);
       })
@@ -99,6 +117,19 @@ class UserController {
   static delete = (req, res) => {
     models.user
       .delete(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static deleteCard = (req, res) => {
+    const { cardId } = req.body;
+    models.card_user
+      .deleteCard(cardId)
       .then(() => {
         res.sendStatus(204);
       })
