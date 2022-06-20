@@ -127,9 +127,9 @@ class UserController {
   };
 
   static deleteCard = (req, res) => {
-    const { cardId } = req.body;
+    const { cardId, userId } = req.params;
     models.card_user
-      .deleteCard(cardId)
+      .deleteCard(cardId, userId)
       .then(() => {
         res.sendStatus(204);
       })
