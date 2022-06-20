@@ -17,10 +17,11 @@ class CardUserManager extends AbstractManager {
     );
   }
 
-  deleteCard(cardId) {
-    return this.connection.query(`delete from card_user where card_id = ?`, [
-      cardId,
-    ]);
+  deleteCard(cardId, userId) {
+    return this.connection.query(
+      `delete from card_user where card_id = ? and user_id = ?`,
+      [cardId, userId]
+    );
   }
 }
 
