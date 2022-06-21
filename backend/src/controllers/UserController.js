@@ -29,6 +29,18 @@ class UserController {
       });
   };
 
+  static readCards = (req, res) => {
+    models.card
+      .findByUser(req.params.id)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static edit = (req, res) => {
     const user = req.body;
 
@@ -44,6 +56,24 @@ class UserController {
         } else {
           res.sendStatus(204);
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static editCard = (req, res) => {
+    const { userId, cardId } = req.params;
+
+    const { active } = req.body;
+
+    // TODO validations (length, format...)
+
+    models.card_user
+      .updateCard(cardId, userId, active)
+      .then(() => {
+        res.sendStatus(204);
       })
       .catch((err) => {
         console.error(err);
@@ -67,9 +97,39 @@ class UserController {
       });
   };
 
+  static addCard = (req, res) => {
+    const userId = req.params.id;
+    const { cardId } = req.body;
+
+    // TODO validations (length, format...)
+
+    models.card_user
+      .insertCard(cardId, userId)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static delete = (req, res) => {
     models.user
       .delete(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static deleteCard = (req, res) => {
+    const { cardId, userId } = req.params;
+    models.card_user
+      .deleteCard(cardId, userId)
       .then(() => {
         res.sendStatus(204);
       })

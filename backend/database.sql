@@ -143,6 +143,32 @@ ALTER TABLE `user`
 
 ALTER TABLE `user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+-- Structure de la table `card_user`
+
+CREATE TABLE `card_user` (
+  `user_id` int(11) UNSIGNED NOT NULL,
+  `card_id` int(11) UNSIGNED NOT NUll,
+  `active` tinyint(1) NOT NULL DEFAULT false,
+  PRIMARY KEY(user_id, card_id),
+  CONSTRAINT FK_CardUser_User FOREIGN KEY (user_id)
+    REFERENCES user(id),
+  CONSTRAINT FK_CardUser_Card FOREIGN KEY (card_id)
+    REFERENCES card(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `card_user`
+--
+
+INSERT INTO `card_user` (`user_id`, `card_id`) VALUES
+(1, 1),
+(1, 17),
+(1, 23),
+(2, 1),
+(2, 16),
+(2, 36);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
