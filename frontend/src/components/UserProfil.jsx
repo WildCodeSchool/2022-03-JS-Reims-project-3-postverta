@@ -28,6 +28,12 @@ export default function UserProfil() {
         </li>
         <li className="m-1">Genre : {userData.gender}</li>
       </ul>
+      <a
+        href="/"
+        className="bg-white m-5 mt-20 text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white"
+      >
+        Déconnexion
+      </a>
     </div>
   );
 }
