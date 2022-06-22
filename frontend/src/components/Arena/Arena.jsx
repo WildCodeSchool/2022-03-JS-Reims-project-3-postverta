@@ -1,6 +1,5 @@
-import MyGround from "./Ground/MyGround";
-import OppenentGround from "./Ground/OppenentGround";
 import TurnButton from "./Ground/TurnButton";
+import Ground from "./Ground/Ground";
 
 export default function Arena() {
   return (
@@ -8,10 +7,10 @@ export default function Arena() {
       <div className="h-32 border-2" />
       <div className="h-96 m-2">
         <div className="-rotate-180">
-          <OppenentGround />
+          <Ground />
         </div>
         <TurnButton />
-        <MyGround />
+        <Ground />
       </div>
       <div className="h-32 border-2" />
     </div>

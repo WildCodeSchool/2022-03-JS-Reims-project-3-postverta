@@ -4,7 +4,7 @@ import MagicArea from "./MagicArea";
 import MonsterArea from "./MonsterArea";
 import PseudoArea from "./PseudoArea";
 
-export default function MyGround() {
+export default function Ground() {
   return (
     <div className=" h-40 flex justify-between">
       <PseudoArea />
