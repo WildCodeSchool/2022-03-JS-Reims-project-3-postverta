@@ -29,9 +29,23 @@ export default function Library() {
     <div className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-library.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken">
       <p className="bg-white bg-opacity-70 text-center">Bibliothèque</p>
       <p className="bg-white bg-opacity-70 text-center">Exemple de livre</p>
-      <ul className=" flex flex-wrap justify-center items-center ">
+      <ul className="flex overflow-x-auto items-center max-w-full p-4">
         {books.map((book) => (
-          <li key={book.id} className="mt-3">
+          <li key={book.id} className="">
+            <Book key={book.id} book={book} />
+          </li>
+        ))}
+      </ul>
+      <ul className="flex overflow-x-auto items-center max-w-full p-4">
+        {books.map((book) => (
+          <li key={book.id} className="">
+            <Book key={book.id} book={book} />
+          </li>
+        ))}
+      </ul>
+      <ul className="flex overflow-x-auto items-center max-w-full p-4">
+        {books.map((book) => (
+          <li key={book.id} className="">
             <Book key={book.id} book={book} />
           </li>
         ))}
