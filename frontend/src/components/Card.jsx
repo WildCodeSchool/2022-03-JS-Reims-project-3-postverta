@@ -24,17 +24,16 @@ export default function Card({ card }) {
           src="https://picsum.photos/100"
           alt="Quentin"
         />
-        <figcaption className="card__figcaption ">
-          <p className="card__class ">[ {card.classe} ]</p>
-          <p className="card__type ">
-            {card.type}/ {card.element}
-          </p>
-
-          <p className="card__stats">
-            ({card.pv}pv) ATK /{card.attack} DEF /{card.defense}
-          </p>
-        </figcaption>
       </figure>
+      <figcaption className="card__figcaption ">
+        <p className="card__class ">[ {card.classe} ]</p>
+        <p className="card__type ">
+          {card.type}/ {card.element}
+        </p>
+      </figcaption>
+      <p className="card__stats">
+        ({card.pv}pv) ATK /{card.attack} DEF /{card.defense}
+      </p>
     </article>
   );
 }
@@ -54,7 +53,6 @@ Card.propTypes = {
     starCount: propTypes.number,
   }),
 };
-
 Card.defaultProps = {
   card: {
     id: 0,
