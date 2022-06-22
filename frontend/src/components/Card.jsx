@@ -4,28 +4,32 @@ import "./Card.css";
 
 export default function Card({ card }) {
   return (
-    <article className={`card p-4 ${slugify(card.classe)}`}>
+    <article
+      className={`card h-28 w-16 overflow-hidden truncate   ${slugify(
+        card.classe
+      )}`}
+    >
       <header>
-        <h1 className="card__name p-4 mb-4">{card.name}</h1>
+        <h1 className="card__name  truncate ">{card.name}</h1>
         <span
-          className="card__stars mb-4"
+          className="card__stars "
           style={{ paddingLeft: `${card.starCount}rem` }}
         >
           {card.starCount} star(s)
         </span>
       </header>
-      <figure className="card__figure">
+      <figure className="card__figure ">
         <img
-          className="card__img mb-4"
-          src="https://picsum.photos/200"
+          className="card__img w-14 self-center "
+          src="https://picsum.photos/100"
           alt="Quentin"
         />
-        <figcaption className="card__figcaption p-2">
-          <p className="card__class mb-2">[ {card.classe} ]</p>
-          <p className="card__type mb-2">
+        <figcaption className="card__figcaption ">
+          <p className="card__class ">[ {card.classe} ]</p>
+          <p className="card__type ">
             {card.type}/ {card.element}
           </p>
-          <p className="card__skill mb-2">{card.skill}</p>
+
           <p className="card__stats">
             ({card.pv}pv) ATK /{card.attack} DEF /{card.defense}
           </p>
@@ -35,6 +39,7 @@ export default function Card({ card }) {
   );
 }
 
+// <p className="card__skill ">{card.skill}</p>
 Card.propTypes = {
   card: propTypes.shape({
     id: propTypes.number.isRequired,
