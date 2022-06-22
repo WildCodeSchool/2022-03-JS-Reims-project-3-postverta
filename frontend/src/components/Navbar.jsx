@@ -14,7 +14,7 @@ const getActiveLinkStyle = ({ isActive }) => {
 
 export default function Navbar() {
   const location = useLocation();
-  const noNavbarPaths = ["/", "/login", "/register"];
+  const noNavbarPaths = ["/", "/login", "/register", "/game"];
   return noNavbarPaths.includes(location.pathname) ? null : (
     <nav className="font-['Sansita-Regular'] bg-white w-screen flex justify-between text-center text-xs">
       <NavLink style={getActiveLinkStyle} to="/">
