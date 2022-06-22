@@ -162,12 +162,23 @@ CREATE TABLE `card_user` (
 --
 
 INSERT INTO `card_user` (`user_id`, `card_id`) VALUES
-(1, 1),
+(1, 18),
+(1, 27),
+(1, 20),
+(1, 24),
+(1, 9),
+(1, 16),
+(1, 5),
 (1, 17),
-(1, 23),
-(2, 1),
-(2, 16),
-(2, 36);
+(1, 29),
+(1, 31),
+(1, 19),
+(1, 6),
+(1, 35),
+(1, 21),
+(1, 13),
+(1, 15),
+(1, 14);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
