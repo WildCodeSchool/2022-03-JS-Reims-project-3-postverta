@@ -1,11 +1,12 @@
 import Hand from "./Hand";
+import OppenentCard from "./OppenentCard";
 
 export default function Arena() {
   return (
-    <>
-      <div className="advHand h-1/4">advHand</div>
-      <div className="ground h-2/4 ">ground</div>
+    <div className="min-h-screen flex flex-col justify-between">
+      <OppenentCard />
+      <div className="h-96 m-2 border-2" />
       <Hand />
-    </>
+    </div>
   );
 }
