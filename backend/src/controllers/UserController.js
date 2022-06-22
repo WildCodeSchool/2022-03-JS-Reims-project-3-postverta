@@ -29,6 +29,20 @@ class UserController {
       });
   };
 
+  static selectCardsByUser = (req, res) => {
+    const { userId, cardId } = req.params;
+
+    models.card_user
+      .selectCards(userId, cardId)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static readCards = (req, res) => {
     models.card
       .findByUser(req.params.id)
@@ -89,7 +103,17 @@ class UserController {
     models.user
       .insert(user)
       .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
+        user.id = result.insertId;
+
+        models.card_user
+          .enableStarterSet(user)
+          .then(() => {
+            res.status(201).send(user);
+          })
+          .catch((err) => {
+            console.error(err);
+            res.sendStatus(500);
+          });
       })
       .catch((err) => {
         console.error(err);
