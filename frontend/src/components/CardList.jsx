@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card";
 
+import { useUserData } from "../context/UserDataContext";
+
 export default function CardList() {
   const [cards, setCards] = useState([]);
+  const { userData } = useUserData();
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/cards/")
+      .get(`http://localhost:5000/users/${userData.id}/cards`)
       .then((res) => res.data)
       .then((data) => {
         setCards(data);
