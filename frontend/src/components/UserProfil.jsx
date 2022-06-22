@@ -8,13 +8,13 @@ export default function UserProfil() {
       className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken flex justify-center 
     flex-col"
     >
-      <p className="bg-white bg-opacity-70 text-center m-5 text-3xl ">
-        Compte utilisateur
+      <p className="bg-white bg-opacity-70 text-center m-5 text-3xl">
+        Mon compte
       </p>
-      <p className="bg-white bg-opacity-70 text-center text-xl m-2">
+      <p className="bg-white bg-opacity-70 text-center m-5 text-xl">
         Informations :
       </p>
-      <ul className="bg-white bg-opacity-70 p-2">
+      <ul className="bg-white bg-opacity-70 m-5">
         <li className="m-1">Nom : {userData.name}</li>
         <li className="m-1">Mail : {userData.email}</li>
         <li className="m-1">Pseudo : {userData.pseudo}</li>
@@ -28,6 +28,12 @@ export default function UserProfil() {
         </li>
         <li className="m-1">Genre : {userData.gender}</li>
       </ul>
+      <a
+        href="/"
+        className="bg-white m-5 mt-20 text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white"
+      >
+        Déconnexion
+      </a>
     </div>
   );
 }

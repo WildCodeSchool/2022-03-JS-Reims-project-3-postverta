@@ -16,11 +16,7 @@ export default function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/login", "/register"];
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="font-['Sansita-Regular'] bg-white w-screen flex justify-between text-center text-xs">
-      <NavLink style={getActiveLinkStyle} to="/">
-        Page d'inscription
-      </NavLink>
-
+    <nav className="font-['Sansita-Regular'] bg-white w-screen flex justify-between text-center text-lg">
       <NavLink style={getActiveLinkStyle} to="/library">
         Bibliothèque
       </NavLink>
@@ -34,7 +30,7 @@ export default function Navbar() {
       </NavLink>
 
       <NavLink style={getActiveLinkStyle} to="/account">
-        Compte utilisateur
+        Mon Compte
       </NavLink>
     </nav>
   );
