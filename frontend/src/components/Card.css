@@ -58,29 +58,19 @@
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  width: 320px;
   flex-shrink: 0;
 }
 .card__img {
-  border: 5px solid grey;
+  border: 2px solid grey;
 }
-.card__skill,
-.card__type {
-  font-size: small;
-}
-.card__class {
-  font-size: large;
-}
+
 .card__figure {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 .card__figcaption {
   border: 3px solid #d5a62a;
   background-color: lightgray;
-  flex-grow: 1;
 }
 .card__stats {
   border-top: 1px solid black;

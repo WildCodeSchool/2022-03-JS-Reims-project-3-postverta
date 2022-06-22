@@ -17,9 +17,11 @@ export default function Hand() {
   }, []);
 
   return (
-    <div className="p-4 gap-4 flex overflow-auto">
+    <div className=" h-1/4 w-screen flex justify-center ">
       {hand.map((card) => (
-        <Card key={card.id} card={card} />
+        <div className="border-2 m-1  h-max text-xs ">
+          <Card key={card.id} card={card} />
+        </div>
       ))}
     </div>
   );
