@@ -9,7 +9,7 @@ export default function UserProfil() {
     flex-col"
     >
       <p className="bg-white bg-opacity-70 text-center m-5 text-3xl">
-        Compte utilisateur
+        Mon compte
       </p>
       <p className="bg-white bg-opacity-70 text-center m-5 text-xl">
         Informations :

@@ -30,7 +30,7 @@ export default function Navbar() {
       </NavLink>
 
       <NavLink style={getActiveLinkStyle} to="/account">
-        Compte utilisateur
+        Mon Compte
       </NavLink>
     </nav>
   );
