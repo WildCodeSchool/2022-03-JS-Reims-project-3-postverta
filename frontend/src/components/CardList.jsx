@@ -20,19 +20,17 @@ export default function CardList() {
   return (
     <ul
       className="cardlist flex justify-center items-center
-    flex-col "
+    flex-row flex-wrap "
     >
       {cards.map((card) => (
-        <li key={card.id} className="m-2 ">
+        <li key={card.id} className="m-1 justify-center flex flex-col">
           <Card card={card} />
-          <div className="flex justify-center items-center flex-row m-3">
-            <button
-              type="button"
-              className="bg-white font-semibold py-2 px-4 border border-black rounded-3xl m-1"
-            >
-              Add to Deck
-            </button>
-          </div>
+          <button
+            type="button"
+            className="bg-white font-semibold py-1 px-2 border border-black rounded-2xl mt-1 align-center"
+          >
+            Add
+          </button>
         </li>
       ))}
     </ul>
