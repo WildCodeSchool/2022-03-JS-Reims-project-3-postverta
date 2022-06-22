@@ -8,13 +8,13 @@ export default function UserProfil() {
       className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken flex justify-center 
     flex-col"
     >
-      <p className="bg-white bg-opacity-70 text-center m-5 text-3xl ">
+      <p className="bg-white bg-opacity-70 text-center m-5 text-3xl">
         Compte utilisateur
       </p>
-      <p className="bg-white bg-opacity-70 text-center text-xl m-2">
+      <p className="bg-white bg-opacity-70 text-center m-5 text-xl">
         Informations :
       </p>
-      <ul className="bg-white bg-opacity-70 p-2">
+      <ul className="bg-white bg-opacity-70 m-5">
         <li className="m-1">Nom : {userData.name}</li>
         <li className="m-1">Mail : {userData.email}</li>
         <li className="m-1">Pseudo : {userData.pseudo}</li>
