@@ -119,7 +119,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `pseudo`, `birthdate`, `gender`, `email`, `password`) VALUES
-(1, "Louis", "Dufour51", "1998-04-07", "Homme", "louis@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ"),
+(1, "Louis", "Dufour51", "1998-04-07", "Homme", "louis@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$ma+nSQ4F0PIAkpmUtFQABg$+JwBpdjnO5vGDa6ccZj40y+6c6M6SammDHiVS5Pt9+U"),
 (2, "Quentin", "Quentou51", "1999-07-28", "Homme", "quentin@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ");
 
 
@@ -163,23 +163,23 @@ CREATE TABLE `card_user` (
 --
 
 INSERT INTO `card_user` (`user_id`, `card_id`, `active`) VALUES
+(1, 1, 1),
+(1, 3, 1),
+(1, 4, 1),
 (1, 5, 1),
 (1, 6, 1),
-(1, 9, 1),
-(1, 13, 1),
-(1, 14, 1),
-(1, 15, 1),
-(1, 16, 1),
-(1, 17, 1),
-(1, 18, 1),
-(1, 19, 1),
-(1, 20, 1),
+(1, 7, 1),
+(1, 8, 1),
+(1, 10, 1),
+(1, 12, 1),
 (1, 21, 1),
-(1, 24, 1),
-(1, 27, 1),
-(1, 29, 1),
-(1, 31, 1),
-(1, 35, 1);
+(1, 22, 1),
+(1, 25, 1),
+(1, 26, 1),
+(1, 28, 1),
+(1, 30, 1),
+(1, 32, 1),
+(1, 36, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
