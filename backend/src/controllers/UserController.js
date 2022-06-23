@@ -89,7 +89,17 @@ class UserController {
     models.user
       .insert(user)
       .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
+        user.id = result.insertId;
+
+        models.card_user
+          .enableStarterSet(user)
+          .then(() => {
+            res.status(201).send(user);
+          })
+          .catch((err) => {
+            console.error(err);
+            res.sendStatus(500);
+          });
       })
       .catch((err) => {
         console.error(err);

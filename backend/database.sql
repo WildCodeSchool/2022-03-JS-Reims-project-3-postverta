@@ -110,7 +110,7 @@ CREATE TABLE `user` (
   `pseudo` varchar(15) NOT NUll,
   `birthdate` DATE,
   `gender` varchar(15),
-  `email` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -119,8 +119,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `pseudo`, `birthdate`, `gender`, `email`, `password`) VALUES
-(1, "Louis", "Dufour51", "1998-04-07", "Homme", "louis@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ"),
+(1, "Louis", "Dufour51", "1998-04-07", "Homme", "louis@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$ma+nSQ4F0PIAkpmUtFQABg$+JwBpdjnO5vGDa6ccZj40y+6c6M6SammDHiVS5Pt9+U"),
 (2, "Quentin", "Quentou51", "1999-07-28", "Homme", "quentin@wild.com", "$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ");
+
 
 --
 -- Index pour les tables exportées
@@ -161,13 +162,24 @@ CREATE TABLE `card_user` (
 -- Contenu de la table `card_user`
 --
 
-INSERT INTO `card_user` (`user_id`, `card_id`) VALUES
-(1, 1),
-(1, 17),
-(1, 23),
-(2, 1),
-(2, 16),
-(2, 36);
+INSERT INTO `card_user` (`user_id`, `card_id`, `active`) VALUES
+(1, 1, 1),
+(1, 3, 1),
+(1, 4, 1),
+(1, 5, 1),
+(1, 6, 1),
+(1, 7, 1),
+(1, 8, 1),
+(1, 10, 1),
+(1, 12, 1),
+(1, 21, 1),
+(1, 22, 1),
+(1, 25, 1),
+(1, 26, 1),
+(1, 28, 1),
+(1, 30, 1),
+(1, 32, 1),
+(1, 36, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
