@@ -10,7 +10,11 @@ export default function CardList() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/${userData.id}/cards`)
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/${
+          userData.id
+        }/cards`
+      )
       .then((res) => res.data)
       .then((data) => {
         setCards(data);
