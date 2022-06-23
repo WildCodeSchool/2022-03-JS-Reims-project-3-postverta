@@ -29,20 +29,6 @@ class UserController {
       });
   };
 
-  static selectCardsByUser = (req, res) => {
-    const { userId, cardId } = req.params;
-
-    models.card_user
-      .selectCards(userId, cardId)
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static readCards = (req, res) => {
     models.card
       .findByUser(req.params.id)
