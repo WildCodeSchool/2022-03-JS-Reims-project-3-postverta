@@ -44,23 +44,27 @@ export default function LoginForm() {
           });
       }}
     >
-      <label htmlFor="email">Email :</label>
+      <label htmlFor="email" className="mb-4">
+        Email :
+      </label>
       <input
         ref={emailRef}
         type="email"
         id="email"
         name="email"
-        className="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-300 border rounded-lg focus:shadow-outline"
+        className="w-3/4 h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-300 border rounded-lg focus:shadow-outline"
         placeholder="johndoe@mail.com"
         required="required"
       />
-      <label htmlFor="password">Mot de passe :</label>
+      <label htmlFor="password" className="mb-4">
+        Mot de passe :
+      </label>
       <input
         ref={passwordRef}
         type="password"
         id="password"
         name="password"
-        className="w-full h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+        className="w-3/4 h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
         required="required"
       />
       <button
