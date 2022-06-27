@@ -59,7 +59,7 @@ export default function Library() {
         Bibliothèque
       </p>
       <p className="bg-white bg-opacity-70 text-center text-xl m-5">
-        Fantasie :
+        Fantaisie :
       </p>
       <ul className="flex overflow-x-auto items-center max-w-full p-4">
         {books.map((book) => (
