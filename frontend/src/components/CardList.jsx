@@ -21,22 +21,53 @@ export default function CardList() {
       });
   }, []);
 
+  const toggleCard = (card) => {
+    axios
+      .put(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/${
+          userData.id
+        }/cards/${card.id}`,
+        { active: !card.active }
+      )
+      .then((response) => {
+        if (response.status === 204) {
+          setCards(
+            cards.map((oldCard) =>
+              oldCard.id === card.id
+                ? { ...oldCard, active: !card.active }
+                : oldCard
+            )
+          );
+        }
+      });
+  };
+
   return (
-    <ul
-      className="cardlist flex justify-center items-center
+    <>
+      <ul
+        className="cardlist flex justify-center items-center
     flex-row flex-wrap "
-    >
-      {cards.map((card) => (
-        <li key={card.id} className="m-1 justify-center flex flex-col">
-          <Card card={card} />
-          <button
-            type="button"
-            className="bg-white font-semibold py-1 px-2 border border-black rounded-2xl mt-1 align-center"
+      >
+        {cards.map((card) => (
+          <label
+            key={card.id}
+            htmlFor={card.name}
+            className="m-1 justify-center flex flex-col"
           >
-            Add
-          </button>
-        </li>
-      ))}
-    </ul>
+            <Card card={card} />
+            <input
+              id={card.name}
+              type="checkbox"
+              checked={card.active}
+              onChange={() => toggleCard(card)}
+              className="hidden"
+            />
+          </label>
+        ))}
+      </ul>
+      <p>
+        {cards.filter((card) => card.active).map((card) => card).length} / 10
+      </p>
+    </>
   );
 }
