@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Card from "./Card";
 
@@ -42,6 +43,10 @@ export default function CardList() {
       });
   };
 
+  const cardsOnHand = cards
+    .filter((card) => card.active)
+    .map((card) => card).length;
+
   return (
     <>
       <ul
@@ -52,7 +57,11 @@ export default function CardList() {
           <label
             key={card.id}
             htmlFor={card.name}
-            className="m-1 justify-center flex flex-col"
+            className={
+              card.active
+                ? "m-1 justify-center flex flex-col"
+                : "m-1 justify-center flex flex-col grayscale"
+            }
           >
             <Card card={card} />
             <input
@@ -65,9 +74,16 @@ export default function CardList() {
           </label>
         ))}
       </ul>
-      <p>
-        {cards.filter((card) => card.active).map((card) => card).length} / 10
-      </p>
+      <p className="bg-white">{cardsOnHand} / 10</p>
+      <div className="inline justify-center flex m-1">
+        {cardsOnHand !== 10 ? (
+          <p className="bg-white">Choisis 10 cartes</p>
+        ) : (
+          <Link to="/game" className="bg-white p-1">
+            Aller dans l'arène
+          </Link>
+        )}
+      </div>
     </>
   );
 }
