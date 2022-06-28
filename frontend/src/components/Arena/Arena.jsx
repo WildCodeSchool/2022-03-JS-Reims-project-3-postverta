@@ -7,7 +7,7 @@ export default function Arena() {
   return (
     <div className=" min-h-screen flex flex-col justify-between">
       <OppenentCard />
-      <div className="h-96 m-2">
+      <div className="h-50 m-2">
         <div className="-rotate-180">
           <Ground />
         </div>
