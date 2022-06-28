@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 const UserDataContext = createContext();
 
-export default UserDataContext;
-
 export function UserDataProvider({ children }) {
   const [userData, setUserData] = useState();
 
@@ -16,8 +14,9 @@ export function UserDataProvider({ children }) {
     </UserDataContext.Provider>
   );
 }
-export const useUserData = () => useContext(UserDataContext);
 
 UserDataProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+export const useUserData = () => useContext(UserDataContext);
