@@ -3,9 +3,12 @@ import Card from "../Card";
 
 export default function Hand({ hand }) {
   return (
-    <div className=" h-1/4 w-screen flex justify-center ">
+    <div className=" h-1/4 flex  overflow-x-auto">
       {hand.map((card) => (
-        <div className="border-2 m-1  h-max text-xs ">
+        <div
+          className="border-2 m-1 mr-8
+         h-max text-xs "
+        >
           <Card key={card.id} card={card} />
         </div>
       ))}

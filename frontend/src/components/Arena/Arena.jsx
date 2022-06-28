@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Hand from "./Hand";
-import OppenentCard from "./OppenentCard";
+import OpponentCard from "./OpponentCard";
 import TurnButton from "./Ground/TurnButton";
 import Ground from "./Ground/Ground";
 
@@ -43,7 +43,7 @@ export default function Arena() {
 
   return (
     <div className=" min-h-screen flex flex-col justify-between">
-      <OppenentCard />
+      <OpponentCard />
       <div className="h-96 m-2">
         <div className="-rotate-180">
           <Ground />
