@@ -1,13 +1,14 @@
-import propTypes from "prop-types";
+import { string } from "prop-types";
+import { defaultCard, CardType } from "../prop-types/CardType";
 import slugify from "../services/slugify";
 import "./Card.css";
 
-export default function Card({ card }) {
+export default function Card({ card, className }) {
   return (
     <article
-      className={`card h-28 w-16 overflow-hidden truncate   ${slugify(
+      className={`card h-28 w-16 overflow-hidden truncate ${slugify(
         card.classe
-      )}`}
+      )}${className ? ` ${className}` : ""}`}
     >
       <header>
         <h1 className="card__name  truncate ">{card.name}</h1>
@@ -40,30 +41,7 @@ export default function Card({ card }) {
 
 // <p className="card__skill ">{card.skill}</p>
 Card.propTypes = {
-  card: propTypes.shape({
-    id: propTypes.number.isRequired,
-    name: propTypes.string.isRequired,
-    classe: propTypes.string.isRequired,
-    pv: propTypes.number,
-    type: propTypes.string,
-    element: propTypes.string,
-    skill: propTypes.string,
-    attack: propTypes.number,
-    defense: propTypes.number,
-    starCount: propTypes.number,
-  }),
+  card: CardType.isRequired,
+  className: string,
 };
-Card.defaultProps = {
-  card: {
-    id: 0,
-    name: "",
-    classe: "",
-    starCount: 0,
-    pv: 0,
-    type: "",
-    element: "",
-    skill: "",
-    attack: 0,
-    defense: 0,
-  },
-};
+Card.defaultProps = { ...defaultCard, className: null };

@@ -4,14 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { useUserData } from "../../context/UserDataContext";
 import Hand from "./Hand";
 import OpponentCard from "./OpponentCard";
-import TurnButton from "./Ground/TurnButton";
+import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
+import PseudoArea from "./Ground/PseudoArea";
 
 export default function Arena() {
   const [drawPile, setDrawPile] = useState([]);
   const [hand, setHand] = useState([]);
   const { userData } = useUserData();
   const navigate = useNavigate();
+  const [playedCards, setPlayedCards] = useState([]);
 
   useEffect(() => {
     axios
@@ -35,24 +37,25 @@ export default function Arena() {
     setDrawPile(drawPile.slice(1));
   };
 
+  const playCard = (cardId) => {
+    const cardToPlay = hand.find((card) => card.id === cardId);
+    setPlayedCards([...playedCards, cardToPlay]);
+    setHand(hand.filter((card) => card.id !== cardId));
+  };
+
   return (
     <div className=" min-h-screen flex flex-col justify-between">
       <OpponentCard />
-      <div className="h-96 m-2">
+      <div className="h-50 m-1">
         <div className="-rotate-180">
+          <PseudoArea />
           <Ground />
         </div>
-        <button
-          type="button"
-          className="bg-black justify-end text-white font-bold py-1 px-2 m-3 rounded-full"
-          onClick={drawCard}
-        >
-          Piocher
-        </button>
-        <TurnButton />
-        <Ground />
+        <ArenaButtons drawCard={drawCard} />
+        <PseudoArea />
+        <Ground playedCards={playedCards} />
       </div>
-      <Hand hand={hand} />
+      <Hand hand={hand} playCard={playCard} />
     </div>
   );
 }
