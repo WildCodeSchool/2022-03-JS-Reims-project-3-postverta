@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTimer } from "use-timer";
 import axios from "axios";
 import Hand from "./Hand";
 import OpponentCard from "./OpponentCard";
@@ -23,6 +24,18 @@ const initialHandIds = createHand(shuffleDeck);
 export default function Arena() {
   const [hand, setHand] = useState([]);
 
+  // bloque le timer quand le joueur clique sur le bouton fin de tour
+  const { time, reset, start } = useTimer({
+    initialTime: 75,
+    timerType: "DECREMENTAL",
+    endTime: 0,
+    autostart: true,
+    onTimeOver: () => {
+      reset();
+      start();
+    },
+  });
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/cards")
@@ -42,6 +55,14 @@ export default function Arena() {
       });
   };
 
+  const minute = () => {
+    return Math.floor(time / 60);
+  };
+
+  const second = () => {
+    return time % 60 < 10 ? `0${time % 60}` : time % 60;
+  };
+
   return (
     <div className=" min-h-screen flex flex-col justify-between">
       <OpponentCard />
@@ -51,6 +72,9 @@ export default function Arena() {
           <Ground />
         </div>
         <ArenaButtons drawCard={drawCard} />
+        <p>
+          {minute()}:{second()}
+        </p>
         <PseudoArea />
         <Ground />
       </div>
