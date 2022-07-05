@@ -1,24 +1,7 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import propTypes from "prop-types";
 import Card from "../Card";
 
-const cardsID = [1, 31, 26, 21, 23, 11, 3, 7, 10, 12, 28, 30];
-cardsID.sort(() => Math.random() - 0.5);
-const size = 8;
-const randomHand = cardsID.slice(0, size);
-
-export default function Hand() {
-  const [hand, setHand] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/cards")
-      .then((res) => res.data)
-      .then((data) => {
-        setHand(data.filter((element) => randomHand.includes(element.id)));
-      });
-  }, []);
-
+export default function Hand({ hand }) {
   return (
     <div className=" h-1/4 flex  overflow-x-auto ">
       {hand.map((card) => (
@@ -32,3 +15,20 @@ export default function Hand() {
     </div>
   );
 }
+
+Hand.propTypes = {
+  hand: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+      name: propTypes.string.isRequired,
+      classe: propTypes.string.isRequired,
+      pv: propTypes.number,
+      type: propTypes.string,
+      element: propTypes.string,
+      skill: propTypes.string,
+      attack: propTypes.number,
+      defense: propTypes.number,
+      starCount: propTypes.number,
+    })
+  ).isRequired,
+};
