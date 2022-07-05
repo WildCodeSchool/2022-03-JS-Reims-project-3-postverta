@@ -6,27 +6,27 @@ export default function OpponentCard() {
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className="border-2  h-28 w-16 "
+        className="border-2  h-28 w-16 md:h-32 md:w-24"
       />
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className="border-2  h-28 w-16 "
+        className="border-2  h-28 w-16 md:h-32 md:w-24"
       />
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className="border-2  h-28 w-16 "
+        className="border-2  h-28 w-16 md:h-32 md:w-24"
       />
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className="border-2  h-28 w-16 "
+        className="border-2  h-28 w-16 md:h-32 md:w-24"
       />
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className="border-2  h-28 w-16 "
+        className="border-2  h-28 w-16 md:h-32 md:w-24"
       />
     </div>
   );
