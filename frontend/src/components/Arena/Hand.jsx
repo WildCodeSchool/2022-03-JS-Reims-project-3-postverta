@@ -5,12 +5,12 @@ export default function Hand({ hand }) {
   return (
     <div className=" h-1/4 flex  overflow-x-auto ">
       {hand.map((card) => (
-        <div
+        <Card
           className="border-2 m-2 mr-8
          h-max text-xs"
-        >
-          <Card key={card.id} card={card} />
-        </div>
+          key={card.id}
+          card={card}
+        />
       ))}
     </div>
   );
