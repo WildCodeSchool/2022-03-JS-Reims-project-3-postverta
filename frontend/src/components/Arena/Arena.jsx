@@ -21,6 +21,7 @@ const initialHandIds = createHand(shuffleDeck);
 
 export default function Arena() {
   const [hand, setHand] = useState([]);
+  const [playedCards, setPlayedCards] = useState([]);
 
   useEffect(() => {
     axios
@@ -41,6 +42,12 @@ export default function Arena() {
       });
   };
 
+  const playCard = (cardId) => {
+    const cardToPlay = hand.find((card) => card.id === cardId);
+    setPlayedCards([...playedCards, cardToPlay]);
+    setHand(hand.filter((card) => card.id !== cardId));
+  };
+
   return (
     <div className=" min-h-screen flex flex-col justify-between">
       <OpponentCard />
@@ -56,9 +63,9 @@ export default function Arena() {
           Piocher
         </button>
         <TurnButton />
-        <Ground />
+        <Ground playedCards={playedCards} />
       </div>
-      <Hand hand={hand} />
+      <Hand hand={hand} playCard={playCard} />
     </div>
   );
 }
