@@ -1,4 +1,6 @@
-export default function ArenaButtons(drawCard) {
+import propTypes from "prop-types";
+
+export default function ArenaButtons({ drawCard }) {
   return (
     <div className=" flex flex-row-reverse m-2 md:mb-16 md:mt-16">
       <button
@@ -17,3 +19,7 @@ export default function ArenaButtons(drawCard) {
     </div>
   );
 }
+
+ArenaButtons.propTypes = {
+  drawCard: propTypes.func.isRequired,
+};

@@ -19,12 +19,18 @@ const createHand = (cards) => {
   return hand;
 };
 
+const minute = (time) => {
+  return Math.floor(time / 60);
+};
+
+const second = (time) => (time % 60).toString().padStart(2, "0");
+
 const initialHandIds = createHand(shuffleDeck);
 
 export default function Arena() {
   const [hand, setHand] = useState([]);
+  const [playedCards, setPlayedCards] = useState([]);
 
-  // bloque le timer quand le joueur clique sur le bouton fin de tour
   const { time, reset, start } = useTimer({
     initialTime: 75,
     timerType: "DECREMENTAL",
@@ -55,12 +61,10 @@ export default function Arena() {
       });
   };
 
-  const minute = () => {
-    return Math.floor(time / 60);
-  };
-
-  const second = () => {
-    return time % 60 < 10 ? `0${time % 60}` : time % 60;
+  const playCard = (cardId) => {
+    const cardToPlay = hand.find((card) => card.id === cardId);
+    setPlayedCards([...playedCards, cardToPlay]);
+    setHand(hand.filter((card) => card.id !== cardId));
   };
 
   return (
@@ -73,12 +77,12 @@ export default function Arena() {
         </div>
         <ArenaButtons drawCard={drawCard} />
         <p>
-          {minute()}:{second()}
+          {minute(time)}:{second(time)}
         </p>
         <PseudoArea />
-        <Ground />
+        <Ground playedCards={playedCards} />
       </div>
-      <Hand hand={hand} />
+      <Hand hand={hand} playCard={playCard} />
     </div>
   );
 }
