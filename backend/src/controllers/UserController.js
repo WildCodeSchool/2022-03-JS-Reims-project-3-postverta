@@ -30,8 +30,13 @@ class UserController {
   };
 
   static readCards = (req, res) => {
+    const active = {
+      true: true,
+      false: false,
+      [undefined]: "both",
+    };
     models.card
-      .findByUser(req.params.id)
+      .findByUser(req.params.id, active[req.query.active])
       .then(([rows]) => {
         res.send(rows);
       })
