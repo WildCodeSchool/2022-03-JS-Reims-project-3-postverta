@@ -1,34 +1,25 @@
 import propTypes from "prop-types";
 import Card from "../Card";
+import { CardType } from "../../prop-types/CardType";
 
-export default function Hand({ hand }) {
+export default function Hand({ hand, playCard }) {
   return (
     <div className=" h-1/4 flex  overflow-x-auto">
       {hand.map((card) => (
-        <div
-          className="border-2 m-1 mr-8
+        <button key={card.id} type="button" onClick={() => playCard(card.id)}>
+          <div
+            className="border-2 m-1 mr-8
          h-max text-xs "
-        >
-          <Card key={card.id} card={card} />
-        </div>
+          >
+            <Card key={card.id} card={card} />
+          </div>
+        </button>
       ))}
     </div>
   );
 }
 
 Hand.propTypes = {
-  hand: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-      name: propTypes.string.isRequired,
-      classe: propTypes.string.isRequired,
-      pv: propTypes.number,
-      type: propTypes.string,
-      element: propTypes.string,
-      skill: propTypes.string,
-      attack: propTypes.number,
-      defense: propTypes.number,
-      starCount: propTypes.number,
-    })
-  ).isRequired,
+  hand: propTypes.arrayOf(CardType.isRequired).isRequired,
+  playCard: propTypes.func.isRequired,
 };
