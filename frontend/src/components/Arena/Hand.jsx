@@ -1,16 +1,19 @@
 import propTypes from "prop-types";
 import Card from "../Card";
 
-export default function Hand({ hand }) {
+export default function Hand({ hand, playCard }) {
   return (
     <div className=" h-1/4 flex  overflow-x-auto ">
       {hand.map((card) => (
-        <Card
+        <button
+          key={card.id}
+          onClick={() => playCard(card.id)}
+          type="button"
           className="border-2 m-2 mr-8
          h-max text-xs"
-          key={card.id}
-          card={card}
-        />
+        >
+          <Card key={card.id} card={card} />
+        </button>
       ))}
     </div>
   );
@@ -31,4 +34,5 @@ Hand.propTypes = {
       starCount: propTypes.number,
     })
   ).isRequired,
+  playCard: propTypes.func.isRequired,
 };
