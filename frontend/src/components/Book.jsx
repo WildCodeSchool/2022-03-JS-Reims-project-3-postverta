@@ -1,11 +1,18 @@
 import { useState } from "react";
 import propTypes from "prop-types";
 import "./Book.css";
+// import ChapterBook from "./ChapterBook";
 
 const buttonStyle =
   "text-black bg-white font-semibold py-2 px-4 border border-black rounded-3xl mt-4";
 
 export default function Book({ book }) {
+  /*
+  const [Modal, open] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: true,
+  });
+  */
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleFlip = () => {
@@ -22,14 +29,21 @@ export default function Book({ book }) {
         <figcaption className="flip-card-back">
           <h1 className="m-2">{book.title}</h1>
           <p className="m-5">{book.synopsis}</p>
-          <button type="button" className={buttonStyle}>
+          {/*
+          <button type="button" className={buttonStyle} onClick={open}>
             Lire
           </button>
+        */}
         </figcaption>
       </figure>
       <button type="button" className={buttonStyle} onClick={toggleFlip}>
         Synopsis
       </button>
+      {/*
+      <Modal>
+        <ChapterBook />
+      </Modal>
+    */}
     </div>
   );
 }
