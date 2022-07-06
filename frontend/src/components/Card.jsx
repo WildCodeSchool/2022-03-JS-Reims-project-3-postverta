@@ -22,8 +22,10 @@ export default function Card({ card, className }) {
       <figure className="card__figure ">
         <img
           className="card__img w-14 self-center "
-          src="https://picsum.photos/100"
-          alt="Quentin"
+          src={`${
+            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+          }/assets/images/${card.id}.png`}
+          alt={card.name}
         />
       </figure>
       <figcaption className="card__figcaption ">
