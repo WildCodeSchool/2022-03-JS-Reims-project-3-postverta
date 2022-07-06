@@ -1,46 +1,40 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useUserData } from "../../context/UserDataContext";
 import Hand from "./Hand";
 import OpponentCard from "./OpponentCard";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
 
-const deck = [1, 31, 26, 21, 23, 11, 3, 7, 10, 12, 28, 30];
-const shuffleDeck = deck.sort(() => Math.random() - 0.5);
-const pickCardId = () => shuffleDeck.shift();
-
-const createHand = (cards) => {
-  const hand = [];
-  for (let i = 0; i < 5; i += 1) {
-    hand.push(cards.shift());
-  }
-  return hand;
-};
-
-const initialHandIds = createHand(shuffleDeck);
-
 export default function Arena() {
+  const [drawPile, setDrawPile] = useState([]);
   const [hand, setHand] = useState([]);
+  const { userData } = useUserData();
+  const navigate = useNavigate();
   const [playedCards, setPlayedCards] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/cards")
+      .get(`http://localhost:5000/users/${userData.id}/cards?active=true`)
       .then((res) => res.data)
-      .then((cards) => {
-        setHand(cards.filter((card) => initialHandIds.includes(card.id)));
+      .then((data) => {
+        if (data.length < 10) {
+          // alert("You need at least 10 cards in your hand");
+          navigate("/deck");
+        }
+
+        const shuffledDeck = data.sort(() => Math.random() - 0.5);
+
+        setHand(shuffledDeck.slice(0, 5));
+        setDrawPile(shuffledDeck.slice(5));
       });
   }, []);
 
   const drawCard = () => {
-    const cardId = pickCardId();
-    axios
-      .get(`http://localhost:5000/cards/${cardId}`)
-      .then((res) => res.data)
-      .then((card) => {
-        setHand([...hand, card]);
-      });
+    setHand([...hand, drawPile[0]]);
+    setDrawPile(drawPile.slice(1));
   };
 
   const playCard = (cardId) => {
