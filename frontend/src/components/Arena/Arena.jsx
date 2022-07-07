@@ -1,3 +1,4 @@
+import { toast, ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useTimer } from "use-timer";
 import axios from "axios";
@@ -65,26 +66,54 @@ export default function Arena() {
     let ok = false;
     let area = null;
 
-    if (cardToPlay.classe.startsWith("Gardien")) {
-      if (playedCards.monsterCards.length < 3 && cardToPlay.starCount < 3) {
+    switch (cardToPlay.classe.startsWith("Gardien")) {
+      case playedCards.monsterCards.length < 3 && cardToPlay.starCount < 3:
         ok = true;
         area = "monsterCards";
-      }
-    } else if (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
-      if (playedCards.magicCards.length < 3) {
+        break;
+      case playedCards.monsterCards.length >= 3:
+        toast.error("Tu ne peux pas jouer plus de 3 monstres");
+        break;
+      case cardToPlay.starCount >= 3:
+        toast.error("Cette carte a trop d'étoiles pour être jouée");
+        break;
+      default:
+        toast.error("Cette carte n'est pas jouable");
+    }
+
+    switch (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
+      case playedCards.magicCards.length < 3:
         ok = true;
         area = "magicCards";
-      }
-    } else if (cardToPlay.classe === "Clé") {
-      if (playedCards.keyCards.length < 1) {
+        break;
+      case playedCards.magicCards.length >= 3:
+        toast.error("Tu ne peux pas jouer plus de 3 cartes magiques");
+        break;
+      default:
+        toast.error("Cette carte n'est pas jouable");
+    }
+
+    switch (cardToPlay.classe === "Clé") {
+      case playedCards.keyCards.length < 1:
         ok = true;
         area = "keyCards";
-      }
-    } else if (cardToPlay.classe === "Terrain") {
-      if (playedCards.landCards.length < 1) {
+        break;
+      case playedCards.keyCards.length >= 1:
+        toast.error("Tu ne peux pas jouer plus de 1 carte clé");
+        break;
+      default:
+        toast.error("Cette carte n'est pas jouable");
+    }
+    switch (cardToPlay.classe === "Terrain") {
+      case playedCards.landCards.length < 1:
         ok = true;
         area = "landCards";
-      }
+        break;
+      case playedCards.landCards.length >= 1:
+        toast.error("Tu ne peux pas jouer plus de 1 carte terrain");
+        break;
+      default:
+        toast.error("Cette carte n'est pas jouable");
     }
 
     if (ok) {
@@ -94,8 +123,6 @@ export default function Arena() {
       });
 
       setHand(hand.filter((card) => card.id !== cardToPlay.id));
-    } else {
-      alert("You can't play this card");
     }
   };
 
@@ -130,6 +157,7 @@ export default function Arena() {
         <Ground playedCards={playedCards} drawCard={drawCard} />
       </div>
       <Hand hand={hand} playCard={playCard} />
+      <ToastContainer />
     </div>
   );
 }
