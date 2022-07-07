@@ -115,10 +115,15 @@ export default function Arena() {
             }}
           />
         </div>
-        <ArenaButtons />
-        <p>
-          {minute(time)}:{second(time)}
-        </p>
+        <div className="flex justify-center items-center">
+          <ArenaButtons />
+          <p
+            className="ml-8
+          "
+          >
+            {minute(time)}:{second(time)}
+          </p>
+        </div>
         <PseudoArea />
         <Ground playedCards={playedCards} drawCard={drawCard} />
       </div>
