@@ -43,8 +43,7 @@ export default function Arena() {
       .get(`http://localhost:5000/users/${userData.id}/cards?active=true`)
       .then((res) => res.data)
       .then((data) => {
-        if (data.length < 10) {
-          // alert("You need at least 10 cards in your hand");
+        if (data.length !== 10) {
           navigate("/deck");
         }
 
