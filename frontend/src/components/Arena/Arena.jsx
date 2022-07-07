@@ -20,7 +20,12 @@ export default function Arena() {
   const [hand, setHand] = useState([]);
   const { userData } = useUserData();
   const navigate = useNavigate();
-  const [playedCards, setPlayedCards] = useState([]);
+  const [playedCards, setPlayedCards] = useState({
+    monsterCards: [],
+    magicCards: [],
+    keyCards: [],
+    landCards: [],
+  });
 
   const { time, reset, start } = useTimer({
     initialTime: 75,
@@ -51,30 +56,71 @@ export default function Arena() {
   }, []);
 
   const drawCard = () => {
-    setHand([...hand, drawPile[0]]);
-    setDrawPile(drawPile.slice(1));
+    if (drawPile.length > 0) {
+      setHand([...hand, drawPile[0]]);
+      setDrawPile(drawPile.slice(1));
+    }
   };
 
-  const playCard = (cardId) => {
-    const cardToPlay = hand.find((card) => card.id === cardId);
-    setPlayedCards([...playedCards, cardToPlay]);
-    setHand(hand.filter((card) => card.id !== cardId));
+  const playCard = (cardToPlay) => {
+    let ok = false;
+    let area = null;
+
+    if (cardToPlay.classe.startsWith("Gardien")) {
+      if (playedCards.monsterCards.length < 3 && cardToPlay.starCount < 3) {
+        ok = true;
+        area = "monsterCards";
+      }
+    } else if (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
+      if (playedCards.magicCards.length < 3) {
+        ok = true;
+        area = "magicCards";
+      }
+    } else if (cardToPlay.classe === "Clé") {
+      if (playedCards.keyCards.length < 1) {
+        ok = true;
+        area = "keyCards";
+      }
+    } else if (cardToPlay.classe === "Terrain") {
+      if (playedCards.landCards.length < 1) {
+        ok = true;
+        area = "landCards";
+      }
+    }
+
+    if (ok) {
+      setPlayedCards({
+        ...playedCards,
+        [area]: [...playedCards[area], cardToPlay],
+      });
+
+      setHand(hand.filter((card) => card.id !== cardToPlay.id));
+    } else {
+      alert("You can't play this card");
+    }
   };
 
   return (
     <div className=" min-h-screen flex flex-col justify-between">
       <OpponentCard />
-      <div className="h-50 m-1">
+      <div className="h-50">
         <div className="-rotate-180">
           <PseudoArea />
-          <Ground />
+          <Ground
+            playedCards={{
+              monsterCards: [],
+              magicCards: [],
+              keyCards: [],
+              landCards: [],
+            }}
+          />
         </div>
-        <ArenaButtons drawCard={drawCard} />
+        <ArenaButtons />
         <p>
           {minute(time)}:{second(time)}
         </p>
         <PseudoArea />
-        <Ground playedCards={playedCards} />
+        <Ground playedCards={playedCards} drawCard={drawCard} />
       </div>
       <Hand hand={hand} playCard={playCard} />
     </div>

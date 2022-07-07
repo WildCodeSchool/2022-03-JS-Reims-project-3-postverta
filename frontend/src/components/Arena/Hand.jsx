@@ -7,7 +7,7 @@ export default function Hand({ hand, playCard }) {
       {hand.map((card) => (
         <button
           key={card.id}
-          onClick={() => playCard(card.id)}
+          onClick={() => playCard(card)}
           type="button"
           className="border-2 m-2 mr-8
          h-max text-xs"

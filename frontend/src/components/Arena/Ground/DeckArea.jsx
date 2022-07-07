@@ -1,16 +1,17 @@
+import propTypes from "prop-types";
 import ReverseCard from "../../../assets/img/Dos-des-cartes.png";
 
-export default function DeckArea() {
+export default function DeckArea({ drawCard }) {
   return (
-    <div className=" grid grid-cols-1 justify-items-center place-content-center gap-16 mr-4">
-      {/* defausse */}
-      <div className=" border-2 border-black h-20 w-14   md:h-32 md:w-24" />
-      {/* deck */}
+    <button type="button" onClick={drawCard}>
       <img
         alt="ReverseCard"
         src={ReverseCard}
-        className=" border-2 border-black h-20 w-14 bg-black md:h-32 md:w-24"
+        className="border-2 border-black h-20 w-16 md:h-32 md:w-24"
       />
-    </div>
+    </button>
   );
 }
+DeckArea.propTypes = {
+  drawCard: propTypes.func.isRequired,
+};
