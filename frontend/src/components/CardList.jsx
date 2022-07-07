@@ -73,7 +73,7 @@ export default function CardList() {
         ))}
       </ul>
       <p className="bg-white">{cardsOnHand} / 10</p>
-      <div className="inline justify-center flex m-1">
+      <div className="justify-center flex">
         {cardsOnHand !== 10 ? (
           <p className="bg-white">Choisis 10 cartes</p>
         ) : (
