@@ -3,50 +3,66 @@ import Book from "../components/Book";
 const books = [
   {
     id: 1,
-    title: "Le livre 1",
-    cover: "https://picsum.photos/200/300",
+    title: "Fable de la Fontaine",
+    type: "Fable",
+    cover: "http://localhost:5000/assets/images/FableDeLaFontaine.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 2,
-    title: "Le livre 2",
-    cover: "https://picsum.photos/200/300",
+    title: "Contes Japonais",
+    type: "Contes",
+    cover: "http://localhost:5000/assets/images/ContesJaponais.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 3,
-    title: "Le livre 3",
-    cover: "https://picsum.photos/200/300",
+    title: "Les septs femmes de barbe bleu",
+    type: "Contes",
+    cover: "http://localhost:5000/assets/images/LesSeptsFemmesDeBarbeBleu.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 4,
-    title: "Le livre 4",
-    cover: "https://picsum.photos/200/300",
+    title: "Fable et legendes du Japon",
+    type: "Fable",
+    cover: "http://localhost:5000/assets/images/FablesEtLegendesDuJapon.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 5,
-    title: "Le livre 5",
-    cover: "https://picsum.photos/200/300",
+    title: "Fable de Florian",
+    type: "Fable",
+    cover: "http://localhost:5000/assets/images/FablesDeFlorianLeLivre.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 6,
-    title: "Le livre 6",
-    cover: "https://picsum.photos/200/300",
+    title: "Les Contes de ma mère l'Oye",
+    type: "Contes",
+    cover: "http://localhost:5000/assets/images/PerraultContes.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
   {
     id: 7,
-    title: "Le livre 7",
-    cover: "https://picsum.photos/200/300",
+    title: "Fable Antoine Vincent Arnault",
+    cover: "http://localhost:5000/assets/images/FableAntoineVincent.jpg",
+    type: "Fable",
+    synopsis:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+  },
+
+  {
+    id: 8,
+    title: "Contes des milles et une nuits",
+    cover: "http://localhost:5000/assets/images/ContesDesMilleEtUneNuits.jpg",
+    type: "Contes",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
   },
@@ -58,35 +74,24 @@ export default function Library() {
       <p className="bg-white bg-opacity-70 text-center mb-10 text-3xl">
         Bibliothèque
       </p>
-      <p className="bg-white bg-opacity-70 text-center text-xl m-5">
-        Fantaisie :
-      </p>
+      <p className="bg-white bg-opacity-70 text-center text-xl m-5">Fables :</p>
       <ul className="flex overflow-x-auto items-center max-w-full p-4">
-        {books.map((book) => (
-          <li key={book.id} className="">
+        {books
+          .filter((book) => book.type === "Fable")
+          .map((book) => (
             <Book key={book.id} book={book} />
-          </li>
-        ))}
+          ))}
       </ul>
+
       <p className="bg-white bg-opacity-70 text-center text-xl  m-5">
-        Science-fiction :
+        Contes :
       </p>
       <ul className="flex overflow-x-auto items-center max-w-full p-4">
-        {books.map((book) => (
-          <li key={book.id} className="">
+        {books
+          .filter((book) => book.type === "Contes")
+          .map((book) => (
             <Book key={book.id} book={book} />
-          </li>
-        ))}
-      </ul>
-      <p className="bg-white bg-opacity-70 text-center text-xl  m-5">
-        Romance :
-      </p>
-      <ul className="flex overflow-x-auto items-center max-w-full p-4">
-        {books.map((book) => (
-          <li key={book.id} className="">
-            <Book key={book.id} book={book} />
-          </li>
-        ))}
+          ))}
       </ul>
     </div>
   );
