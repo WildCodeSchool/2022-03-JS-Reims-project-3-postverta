@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTimer } from "use-timer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUserData } from "../../context/UserDataContext";
@@ -7,6 +8,12 @@ import OpponentCard from "./OpponentCard";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
+
+const minute = (time) => {
+  return Math.floor(time / 60);
+};
+
+const second = (time) => (time % 60).toString().padStart(2, "0");
 
 export default function Arena() {
   const [drawPile, setDrawPile] = useState([]);
@@ -18,6 +25,17 @@ export default function Arena() {
     magicCards: [],
     keyCards: [],
     landCards: [],
+  });
+
+  const { time, reset, start } = useTimer({
+    initialTime: 75,
+    timerType: "DECREMENTAL",
+    endTime: 0,
+    autostart: true,
+    onTimeOver: () => {
+      reset();
+      start();
+    },
   });
 
   useEffect(() => {
@@ -98,6 +116,9 @@ export default function Arena() {
           />
         </div>
         <ArenaButtons />
+        <p>
+          {minute(time)}:{second(time)}
+        </p>
         <PseudoArea />
         <Ground playedCards={playedCards} drawCard={drawCard} />
       </div>
