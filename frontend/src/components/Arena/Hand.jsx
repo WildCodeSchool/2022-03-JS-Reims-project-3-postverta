@@ -21,7 +21,7 @@ Modal.Window = Window;
 
 export default function Hand({ hand, playCard }) {
   return (
-    <div className=" h-1/4 flex  overflow-x-auto ">
+    <div className=" h-1/4 flex  overflow-x-auto gap-8 p-4 ml-4">
       {hand.map((card) => (
         <Modal>
           <Modal.Trigger
@@ -34,7 +34,7 @@ export default function Hand({ hand, playCard }) {
           <Modal.Window>
             <CardDetails key={card.id} card={card} className="" />
             <button
-              onClick={() => playCard(card.id)}
+              onClick={() => playCard(card)}
               type="button"
               className="bg-white text-2xl text-black mt-4 p-2 rounded-xl"
             >

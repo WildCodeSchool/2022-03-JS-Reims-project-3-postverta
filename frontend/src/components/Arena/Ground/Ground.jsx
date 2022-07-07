@@ -10,7 +10,7 @@ import LandArea from "./LandArea";
 export default function Ground({ playedCards, drawCard }) {
   return (
     <div className=" h-40 grid grid-cols-3 gap-8">
-      <div className=" flex flex-col justify-center items-center gap-12">
+      <div className=" flex flex-col justify-center items-center gap-16">
         <GraveyardArea />
         <LandArea playedCards={playedCards.landCards} />
       </div>
@@ -18,7 +18,7 @@ export default function Ground({ playedCards, drawCard }) {
         <MonsterArea playedCards={playedCards.monsterCards} />
         <MagicArea playedCards={playedCards.magicCards} />
       </div>
-      <div className=" flex flex-col justify-center items-center gap-12">
+      <div className=" flex flex-col justify-center items-center gap-16">
         <KeysArea playedCards={playedCards.keyCards} />
         <DeckArea drawCard={drawCard} />
       </div>
