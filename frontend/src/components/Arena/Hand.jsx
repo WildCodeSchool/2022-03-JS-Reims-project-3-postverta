@@ -1,5 +1,6 @@
 import propTypes from "prop-types";
 import Card from "../Card";
+import CardDetails from "../CardDetails";
 import "../Modal.css";
 
 function Modal({ children }) {
@@ -31,9 +32,13 @@ export default function Hand({ hand, playCard }) {
             <Card key={card.id} card={card} />
           </Modal.Trigger>
           <Modal.Window>
-            <Card key={card.id} card={card} className="card" />
-            <button onClick={() => playCard(card.id)} type="button">
-              poser
+            <CardDetails key={card.id} card={card} className="" />
+            <button
+              onClick={() => playCard(card.id)}
+              type="button"
+              className="bg-white text-2xl text-black mt-4 p-2 rounded-xl"
+            >
+              Poser
             </button>
           </Modal.Window>
         </Modal>
