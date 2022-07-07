@@ -4,31 +4,34 @@ import GraveyardArea from "./GraveyardArea";
 import MagicArea from "./MagicArea";
 import MonsterArea from "./MonsterArea";
 import { CardType } from "../../../prop-types/CardType";
-import Card from "../../Card";
+import KeysArea from "./KeysArea";
+import LandArea from "./LandArea";
 
-export default function Ground({ playedCards }) {
+export default function Ground({ playedCards, drawCard }) {
   return (
-    <div className=" h-40 flex justify-between ml-4">
-      <GraveyardArea />
-      <div className="w-50  grid grid-cols-3 justify-items-center place-content-center gap-4">
-        <MonsterArea />
-        <MagicArea />
-        {playedCards.map((card) => (
-          <Card
-            className="border-2 border-black h-14 w-10"
-            key={card.id}
-            card={card}
-          />
-        ))}
+    <div className=" h-40 grid grid-cols-3 gap-8">
+      <div className=" flex flex-col justify-center items-center gap-12">
+        <GraveyardArea />
+        <LandArea playedCards={playedCards.landCards} />
       </div>
-      <DeckArea />
+      <div className=" flex flex-col justify-center items-center gap-4">
+        <MonsterArea playedCards={playedCards.monsterCards} />
+        <MagicArea playedCards={playedCards.magicCards} />
+      </div>
+      <div className=" flex flex-col justify-center items-center gap-12">
+        <KeysArea playedCards={playedCards.keyCards} />
+        <DeckArea drawCard={drawCard} />
+      </div>
     </div>
   );
 }
 
 Ground.propTypes = {
-  playedCards: propTypes.arrayOf(CardType),
-};
-Ground.defaultProps = {
-  playedCards: [],
+  playedCards: propTypes.shape({
+    monsterCards: propTypes.arrayOf(CardType).isRequired,
+    magicCards: propTypes.arrayOf(CardType).isRequired,
+    keyCards: propTypes.arrayOf(CardType).isRequired,
+    landCards: propTypes.arrayOf(CardType).isRequired,
+  }).isRequired,
+  drawCard: propTypes.func.isRequired,
 };

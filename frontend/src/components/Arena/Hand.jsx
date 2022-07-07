@@ -34,7 +34,7 @@ export default function Hand({ hand, playCard }) {
           <Modal.Window>
             <CardDetails key={card.id} card={card} className="" />
             <button
-              onClick={() => playCard(card.id)}
+              onClick={() => playCard(card)}
               type="button"
               className="bg-white text-2xl text-black mt-4 p-2 rounded-xl"
             >
