@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "echo '----- Checking Frontend...' && prettier --debug-check . && eslint --ext .jsx . && echo '----- Done!'",
-    "fix": "prettier --write . && eslint --fix --ext .jsx ."
+    "fix": "prettier --write . && eslint --fix --ext .jsx .",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -32,6 +33,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.0",
+    "jest": "^28.1.2",
     "postcss": "^8.4.14",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.24",
