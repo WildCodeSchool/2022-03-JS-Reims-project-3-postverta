@@ -44,7 +44,7 @@ export default function Arena() {
       .get(`http://localhost:5000/users/${userData.id}/cards?active=true`)
       .then((res) => res.data)
       .then((data) => {
-        if (data.length !== 10) {
+        if (data.length !== 15) {
           navigate("/deck");
         }
 

@@ -74,10 +74,10 @@ export default function CardList() {
       </ul>
       <div className="flex-col justify-center items-center flex m-1">
         <p className="bg-white w-1/4 mb-12 mt-4 text-center">
-          {cardsOnHand} / 10
+          {cardsOnHand} / 15
         </p>
-        {cardsOnHand !== 10 ? (
-          <p className="bg-white p-2">Choisis 10 cartes</p>
+        {cardsOnHand !== 15 ? (
+          <p className="bg-white p-2">Choisis 15 cartes</p>
         ) : (
           <Link to="/game" className="bg-white p-1">
             Aller dans l'arène
