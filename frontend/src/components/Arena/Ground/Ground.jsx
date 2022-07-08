@@ -7,7 +7,7 @@ import { CardType } from "../../../prop-types/CardType";
 import KeysArea from "./KeysArea";
 import LandArea from "./LandArea";
 
-export default function Ground({ playedCards, drawCard }) {
+export default function Ground({ playedCards, drawCard, drawPileLength }) {
   return (
     <div className=" h-40 grid grid-cols-3 gap-8">
       <div className=" flex flex-col justify-center items-center gap-20">
@@ -20,7 +20,7 @@ export default function Ground({ playedCards, drawCard }) {
       </div>
       <div className=" flex flex-col justify-center items-center gap-20">
         <KeysArea playedCards={playedCards.keyCards} />
-        <DeckArea drawCard={drawCard} />
+        <DeckArea drawCard={drawCard} drawPileLength={drawPileLength} />
       </div>
     </div>
   );
@@ -34,4 +34,9 @@ Ground.propTypes = {
     landCards: propTypes.arrayOf(CardType).isRequired,
   }).isRequired,
   drawCard: propTypes.func.isRequired,
+  drawPileLength: propTypes.number,
+};
+
+Ground.defaultProps = {
+  drawPileLength: 0,
 };

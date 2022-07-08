@@ -23,18 +23,19 @@ export default function Hand({ hand, playCard }) {
   return (
     <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto ">
       {hand.map((card) => (
-        <Modal>
+        <Modal key={card.id}>
           <Modal.Trigger
-            key={card.id}
             className="border-2 m-2 mr-8
          h-max text-xs"
           >
-            <Card key={card.id} card={card} />
+            <Card card={card} />
           </Modal.Trigger>
           <Modal.Window>
-            <CardDetails key={card.id} card={card} className="" />
+            <CardDetails card={card} className="" />
             <button
-              onClick={() => playCard(card)}
+              onClick={() => {
+                playCard(card);
+              }}
               type="button"
               className="bg-white text-2xl text-black mt-4 p-2 rounded-xl"
             >

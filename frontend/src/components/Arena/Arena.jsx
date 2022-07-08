@@ -154,7 +154,11 @@ export default function Arena() {
           <ArenaButtons />
         </div>
         <PseudoArea />
-        <Ground playedCards={playedCards} drawCard={drawCard} />
+        <Ground
+          playedCards={playedCards}
+          drawCard={drawCard}
+          drawPileLength={drawPile.length}
+        />
       </div>
       <Hand hand={hand} playCard={playCard} />
       <ToastContainer />
