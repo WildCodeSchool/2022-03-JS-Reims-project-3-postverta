@@ -66,54 +66,63 @@ export default function Arena() {
     let ok = false;
     let area = null;
 
-    switch (cardToPlay.classe.startsWith("Gardien")) {
-      case playedCards.monsterCards.length < 3 && cardToPlay.starCount < 3:
-        ok = true;
-        area = "monsterCards";
-        break;
-      case playedCards.monsterCards.length >= 3:
-        toast.error("Tu ne peux pas jouer plus de 3 monstres");
-        break;
-      case cardToPlay.starCount >= 3:
-        toast.error("Cette carte a trop d'étoiles pour être jouée");
-        break;
-      default:
-        toast.error("Cette carte n'est pas jouable");
+    if (cardToPlay.classe.startsWith("Gardien")) {
+      switch (cardToPlay.classe.startsWith("Gardien")) {
+        case playedCards.monsterCards.length < 3 && cardToPlay.starCount < 3:
+          ok = true;
+          area = "monsterCards";
+          break;
+        case playedCards.monsterCards.length >= 3:
+          toast.error("Tu ne peux pas jouer plus de 3 monstres");
+          break;
+        case cardToPlay.starCount >= 3:
+          toast.error("Cette carte a trop d'étoiles pour être jouée");
+          break;
+        default:
+          toast.error("Cette carte n'est pas jouable");
+      }
     }
 
-    switch (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
-      case playedCards.magicCards.length < 3:
-        ok = true;
-        area = "magicCards";
-        break;
-      case playedCards.magicCards.length >= 3:
-        toast.error("Tu ne peux pas jouer plus de 3 cartes magiques");
-        break;
-      default:
-        toast.error("Cette carte n'est pas jouable");
+    if (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
+      switch (cardToPlay.classe === "Magie" || cardToPlay.classe === "Piège") {
+        case playedCards.magicCards.length < 3:
+          ok = true;
+          area = "magicCards";
+          break;
+        case playedCards.magicCards.length >= 3:
+          toast.error("Tu ne peux pas jouer plus de 3 cartes magiques");
+          break;
+        default:
+          toast.error("Cette carte n'est pas jouable");
+      }
     }
 
-    switch (cardToPlay.classe === "Clé") {
-      case playedCards.keyCards.length < 1:
-        ok = true;
-        area = "keyCards";
-        break;
-      case playedCards.keyCards.length >= 1:
-        toast.error("Tu ne peux pas jouer plus de 1 carte clé");
-        break;
-      default:
-        toast.error("Cette carte n'est pas jouable");
+    if (cardToPlay.classe === "Clé") {
+      switch (cardToPlay.classe === "Clé") {
+        case playedCards.keyCards.length < 1:
+          ok = true;
+          area = "keyCards";
+          break;
+        case playedCards.keyCards.length >= 1:
+          toast.error("Tu ne peux pas jouer plus de 1 carte clé");
+          break;
+        default:
+          toast.error("Cette carte n'est pas jouable");
+      }
     }
-    switch (cardToPlay.classe === "Terrain") {
-      case playedCards.landCards.length < 1:
-        ok = true;
-        area = "landCards";
-        break;
-      case playedCards.landCards.length >= 1:
-        toast.error("Tu ne peux pas jouer plus de 1 carte terrain");
-        break;
-      default:
-        toast.error("Cette carte n'est pas jouable");
+
+    if (cardToPlay.classe === "Terrain") {
+      switch (cardToPlay.classe === "Terrain") {
+        case playedCards.landCards.length < 1:
+          ok = true;
+          area = "landCards";
+          break;
+        case playedCards.landCards.length >= 1:
+          toast.error("Tu ne peux pas jouer plus de 1 carte terrain");
+          break;
+        default:
+          toast.error("Cette carte n'est pas jouable");
+      }
     }
 
     if (ok) {
