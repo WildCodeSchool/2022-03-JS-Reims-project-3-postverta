@@ -105,7 +105,7 @@ export default function RegisterForm() {
       </label>
       <input
         ref={birthdateRef}
-        id="birthday"
+        id="birthdate"
         type="date"
         name="birthdate"
         className="w-3/4 h-10 px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
