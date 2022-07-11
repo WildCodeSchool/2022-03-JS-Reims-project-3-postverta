@@ -3,8 +3,12 @@ import Card from "../Card";
 import CardDetails from "../CardDetails";
 import "../Modal.css";
 
-function Modal({ children }) {
-  return <details className="modal">{children}</details>;
+function Modal({ children, open }) {
+  return (
+    <details className="modal" open={open}>
+      {children}
+    </details>
+  );
 }
 
 function Trigger({ children }) {
@@ -23,7 +27,7 @@ export default function Hand({ hand, playCard }) {
   return (
     <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto mt-auto">
       {hand.map((card) => (
-        <Modal key={card.id}>
+        <Modal key={card.id} open={card.open ?? false}>
           <Modal.Trigger
             className="border-2 m-2 mr-8
          h-max text-xs"
@@ -68,6 +72,7 @@ Hand.propTypes = {
 
 Modal.propTypes = {
   children: propTypes.node.isRequired,
+  open: propTypes.bool.isRequired,
 };
 
 Trigger.propTypes = {

@@ -67,7 +67,7 @@ export default function Arena() {
 
   const drawCard = () => {
     if (drawPile.length > 0) {
-      setHand([...hand, drawPile[0]]);
+      setHand([...hand, { ...drawPile[0], open: true }]);
       setDrawPile(drawPile.slice(1));
     }
   };
