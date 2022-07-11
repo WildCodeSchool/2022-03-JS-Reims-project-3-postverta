@@ -136,7 +136,7 @@ export default function Arena() {
   };
 
   return (
-    <div className=" min-h-screen flex flex-col justify-between">
+    <div className=" min-h-screen flex flex-col ">
       <OpponentCard />
       <div className="h-50">
         <div className="-rotate-180">
