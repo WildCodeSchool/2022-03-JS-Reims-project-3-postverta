@@ -25,7 +25,7 @@ Modal.Window = Window;
 
 export default function Hand({ hand, playCard }) {
   return (
-    <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto ">
+    <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto mt-auto">
       {hand.map((card) => (
         <Modal key={card.id} open={card.open ?? false}>
           <Modal.Trigger

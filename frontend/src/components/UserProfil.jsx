@@ -24,7 +24,7 @@ export default function UserProfil() {
             year: "numeric",
             month: "long",
             day: "2-digit",
-          }).format(userData.birthDate)}
+          }).format(new Date(userData.birthdate))}
         </li>
         <li className="m-1">Genre : {userData.gender}</li>
       </ul>
