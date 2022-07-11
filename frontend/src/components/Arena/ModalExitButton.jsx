@@ -2,9 +2,12 @@ import propTypes from "prop-types";
 import "../Modal.css";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
 function Modal({ children }) {
-  return <details className="modal">{children}</details>;
+  return (
+    <details className="modal" close>
+      {children}
+    </details>
+  );
 }
 
 function Trigger({ children }) {
@@ -20,11 +23,17 @@ function Window({ children }) {
 Modal.Window = Window;
 
 export default function LeaveButton() {
+  const navigate = useNavigate();
   return (
     <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto ">
       <Modal>
-        <Modal.Trigger className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3">
-          Quitter
+        <Modal.Trigger>
+          <button
+            type="button"
+            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
+          >
+            Quitter
+          </button>
         </Modal.Trigger>
         <Modal.Window>
           <h1 className="bg-white text-black p-2 rounded-xl">
@@ -38,13 +47,6 @@ export default function LeaveButton() {
             className="bg-white text-2xl text-black mt-4 p-2 rounded-xl border-4 border-amber-400"
           >
             Quitter
-          </button>
-          <button
-            onClick={() => {}}
-            type="button"
-            className="bg-white text-2xl text-black mt-4 p-2 rounded-xl border-4 border-amber-400"
-          >
-            Rester
           </button>
         </Modal.Window>
       </Modal>
