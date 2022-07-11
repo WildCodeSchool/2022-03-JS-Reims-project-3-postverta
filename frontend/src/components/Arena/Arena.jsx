@@ -2,13 +2,14 @@ import { toast, ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useTimer } from "use-timer";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUserData } from "../../context/UserDataContext";
 import Hand from "./Hand";
 import OpponentCard from "./OpponentCard";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
+import LeaveButton from "./ModalExitButton";
 
 const minute = (time) => {
   return Math.floor(time / 60);
@@ -160,12 +161,7 @@ export default function Arena() {
           />
         </div>
         <div className="flex justify-center items-center">
-          <Link
-            to="/deck"
-            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
-          >
-            Quitter
-          </Link>
+          <LeaveButton />
           <p className="m-4 text-center text-white font-bold">
             {minute(time)}:{second(time)}
           </p>
