@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { useUserData } from "../context/UserDataContext";
 
 export default function UserProfil() {
   const { userData } = useUserData();
+  const navigate = useNavigate();
 
   return (
     <div
@@ -34,6 +36,15 @@ export default function UserProfil() {
       >
         Déconnexion
       </a>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+        type="button"
+        className="bg-red-700 m-5 mt-20 text-white text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white"
+      >
+        Quitter
+      </button>
     </div>
   );
 }
