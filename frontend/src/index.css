@@ -14,8 +14,3 @@
     perspective: 1000px;
   }
 }
-
-.App > :first-child {
-  flex-grow: 1;
-  overflow: auto;
-}
