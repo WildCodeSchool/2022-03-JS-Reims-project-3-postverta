@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 import "./Book.css";
+
 export default function Book({ book }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
