@@ -28,12 +28,9 @@ export default function LeaveButton() {
     <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto ">
       <Modal>
         <Modal.Trigger>
-          <button
-            type="button"
-            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
-          >
+          <p className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3">
             Quitter
-          </button>
+          </p>
         </Modal.Trigger>
         <Modal.Window>
           <h1 className="bg-white text-black p-2 rounded-xl">
@@ -44,7 +41,7 @@ export default function LeaveButton() {
               navigate("/deck");
             }}
             type="button"
-            className="bg-white text-2xl text-black mt-4 p-2 rounded-xl border-4 border-amber-400"
+            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full md:py-2 md:px-3"
           >
             Quitter
           </button>
