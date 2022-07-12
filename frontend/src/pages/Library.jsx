@@ -93,7 +93,6 @@ export default function Library() {
             <Book key={book.id} book={book} />
           ))}
       </ul>
-      <div className="h-12" />
     </div>
   );
 }
