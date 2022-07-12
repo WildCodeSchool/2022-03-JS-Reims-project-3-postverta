@@ -1,4 +1,4 @@
-import regleArene from "../assets/img/règle.png";
+import regleArene from "../assets/img/rules.png";
 
 function RulesModal() {
   return (
