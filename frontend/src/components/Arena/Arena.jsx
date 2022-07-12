@@ -8,7 +8,6 @@ import Hand from "./Hand";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
-import OpponnentPseudo from "./Ground/OpponentPseudo";
 
 const minute = (time) => {
   return Math.floor(time / 60);
@@ -134,7 +133,6 @@ export default function Arena() {
       setHand(hand.filter((card) => card.id !== cardToPlay.id));
     }
   };
-
   return (
     <div className="p-4 min-h-screen flex flex-col">
       {/* <OpponentCard /> */}
@@ -149,7 +147,7 @@ export default function Arena() {
             }}
           />
         </div>
-        <OpponnentPseudo />
+        <PseudoArea pseudo="Nibor" />
         <div className="flex justify-center items-center">
           <Link
             to="/deck"
@@ -162,7 +160,7 @@ export default function Arena() {
           </p>
           <ArenaButtons />
         </div>
-        <PseudoArea />
+        <PseudoArea pseudo={userData.pseudo} />
         <Ground
           playedCards={playedCards}
           drawCard={drawCard}
