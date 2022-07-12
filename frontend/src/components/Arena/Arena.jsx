@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import { toast, ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useTimer } from "use-timer";
@@ -14,6 +15,32 @@ const minute = (time) => {
 };
 
 const second = (time) => (time % 60).toString().padStart(2, "0");
+
+function Modal({ children }) {
+  return <details className="modal">{children}</details>;
+}
+
+function Trigger({ children }) {
+  return <summary className="modal-trigger">{children}</summary>;
+}
+
+Modal.Trigger = Trigger;
+
+function Window({ children }) {
+  return <div className="modal-window">{children}</div>;
+}
+
+Modal.Window = Window;
+
+Modal.propTypes = {
+  children: propTypes.node.isRequired,
+};
+Trigger.propTypes = {
+  children: propTypes.node.isRequired,
+};
+Window.propTypes = {
+  children: propTypes.node.isRequired,
+};
 
 export default function Arena() {
   const [drawPile, setDrawPile] = useState([]);
@@ -159,12 +186,25 @@ export default function Arena() {
           />
         </div>
         <div className="flex justify-center items-center">
-          <Link
-            to="/deck"
-            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
-          >
-            Quitter
-          </Link>
+          <Modal>
+            <Modal.Trigger>
+              <p className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3">
+                Quitter
+              </p>
+            </Modal.Trigger>
+            <Modal.Window>
+              <p className="text-center text-4xl text-white">
+                Voulez-vous vraiment quitter la partie ?
+              </p>
+              <Link
+                to="/deck"
+                className="bg-black text-white font-bold text-2xl py-4 px-4 my-8 rounded-full p-md:py-2 md:px-3"
+              >
+                oui
+              </Link>
+            </Modal.Window>
+          </Modal>
+
           <p className="m-4 text-center text-white font-bold">
             {minute(time)}:{second(time)}
           </p>
