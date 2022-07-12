@@ -58,7 +58,9 @@ export default function CardList() {
             key={card.id}
             htmlFor={card.name}
             className={`m-1 justify-center flex flex-col${
-              card.active ? "" : " grayscale"
+              card.active
+                ? "border border-2 shadow-2xl shadow-white"
+                : " grayscale"
             }`}
           >
             <Card card={card} />

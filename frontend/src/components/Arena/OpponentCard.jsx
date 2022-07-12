@@ -2,7 +2,7 @@ import ReverseCard from "../../assets/img/Dos-des-cartes.png";
 
 export default function OpponentCard() {
   return (
-    <div className=" flex h-32 max-w-screen gap-2 justify-center pt-2">
+    <div className=" flex h-32 max-w-screen gap-2 justify-center pt-2 mb-auto">
       <img
         alt="ReverseCard"
         src={ReverseCard}

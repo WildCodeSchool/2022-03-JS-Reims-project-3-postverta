@@ -11,7 +11,7 @@ export default function Ground({ playedCards, drawCard, drawPileLength }) {
   return (
     <div className=" h-40 grid grid-cols-3 gap-8">
       <div className=" flex flex-col justify-center items-center gap-20">
-        <GraveyardArea />
+        <KeysArea playedCards={playedCards.keyCards} />
         <LandArea playedCards={playedCards.landCards} />
       </div>
       <div className=" flex flex-col justify-center items-center gap-8">
@@ -19,7 +19,7 @@ export default function Ground({ playedCards, drawCard, drawPileLength }) {
         <MagicArea playedCards={playedCards.magicCards} />
       </div>
       <div className=" flex flex-col justify-center items-center gap-20">
-        <KeysArea playedCards={playedCards.keyCards} />
+        <GraveyardArea />
         <DeckArea drawCard={drawCard} drawPileLength={drawPileLength} />
       </div>
     </div>

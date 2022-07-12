@@ -25,10 +25,7 @@ class CardUserManager extends AbstractManager {
       (:userId, 20, 1),
       (:userId, 21, 1),
       (:userId, 24, 1),
-      (:userId, 27, 1),
-      (:userId, 29, 1),
-      (:userId, 31, 1),
-      (:userId, 35, 1)`;
+      (:userId, 27, 1)`;
 
     return this.connection.query(sql, { userId: user.id });
   }
