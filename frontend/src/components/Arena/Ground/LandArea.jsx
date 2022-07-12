@@ -1,7 +1,6 @@
-import Card from "@components/Card";
 import propTypes from "prop-types";
+import Card from "../../Card";
 import { CardType } from "../../../prop-types/CardType";
-import CardDetails from "../../CardDetails";
 import "../../Modal.css";
 
 function Modal({ children }) {
@@ -21,18 +20,17 @@ function Window({ children }) {
 Modal.Window = Window;
 export default function LandArea({ playedCards }) {
   return (
-    <div className="border-2 border-black h-20 w-16 md:h-32 md:w-24">
+    <div className="card-container self-end">
       {playedCards[0] && (
-        <Modal
-          key={playedCards[0].id}
-          open={playedCards[0].open ?? false}
-          className="w-full h-full"
-        >
-          <Modal.Trigger>
-            <Card card={playedCards[0]} className="w-full h-full" />
+        <Modal key={playedCards[0].id} open={playedCards[0].open ?? false}>
+          <Modal.Trigger
+            className="border-2 m-2 mr-8
+         h-max text-xs"
+          >
+            <Card card={playedCards[0]} />
           </Modal.Trigger>
           <Modal.Window>
-            <CardDetails card={playedCards[0]} className="" />
+            <Card card={playedCards[0]} className="" showDetails />
           </Modal.Window>
         </Modal>
       )}

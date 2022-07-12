@@ -1,7 +1,6 @@
-import Card from "@components/Card";
 import propTypes from "prop-types";
+import Card from "../../Card";
 import { CardType } from "../../../prop-types/CardType";
-import CardDetails from "../../CardDetails";
 import "../../Modal.css";
 
 function Modal({ children }) {
@@ -22,56 +21,53 @@ Modal.Window = Window;
 
 export default function MagicArea({ playedCards }) {
   return (
-    <div className="flex justify-center items-center gap-2">
-      <div className="border-2 border-black h-20 w-16 md:h-32 md:w-24">
+    <>
+      <div className="card-container self-start">
         {playedCards[0] && (
-          <Modal
-            key={playedCards[0].id}
-            open={playedCards[0].open ?? false}
-            className="w-full h-full"
-          >
-            <Modal.Trigger>
-              <Card card={playedCards[0]} className="w-full h-full" />
+          <Modal key={playedCards[0].id} open={playedCards[0].open ?? false}>
+            <Modal.Trigger
+              className="border-2 m-2 mr-8
+         h-max text-xs"
+            >
+              <Card card={playedCards[0]} />
             </Modal.Trigger>
             <Modal.Window>
-              <CardDetails card={playedCards[0]} className="" />
+              <Card card={playedCards[0]} className="" showDetails />
             </Modal.Window>
           </Modal>
         )}
       </div>
-      <div className="border-2 border-black h-20 w-16 md:h-32 md:w-24">
+      <div className="card-container self-start">
         {playedCards[1] && (
-          <Modal
-            key={playedCards[1].id}
-            open={playedCards[1].open ?? false}
-            className="w-full h-full"
-          >
-            <Modal.Trigger>
-              <Card card={playedCards[1]} className="w-full h-full" />
+          <Modal key={playedCards[1].id} open={playedCards[1].open ?? false}>
+            <Modal.Trigger
+              className="border-2 m-2 mr-8
+         h-max text-xs"
+            >
+              <Card card={playedCards[1]} />
             </Modal.Trigger>
             <Modal.Window>
-              <CardDetails card={playedCards[1]} className="" />
+              <Card card={playedCards[1]} className="" showDetails />
             </Modal.Window>
           </Modal>
         )}
       </div>
-      <div className="border-2 border-black h-20 w-16 md:h-32 md:w-24">
+      <div className="card-container self-start">
         {playedCards[2] && (
-          <Modal
-            key={playedCards[2].id}
-            open={playedCards[2].open ?? false}
-            className="w-full h-full"
-          >
-            <Modal.Trigger>
-              <Card card={playedCards[2]} className="w-full h-full" />
+          <Modal key={playedCards[2].id} open={playedCards[2].open ?? false}>
+            <Modal.Trigger
+              className="border-2 m-2 mr-8
+         h-max text-xs"
+            >
+              <Card card={playedCards[2]} />
             </Modal.Trigger>
             <Modal.Window>
-              <CardDetails card={playedCards[2]} className="" />
+              <Card card={playedCards[2]} className="" showDetails />
             </Modal.Window>
           </Modal>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
