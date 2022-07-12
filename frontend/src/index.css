@@ -16,6 +16,6 @@
 }
 
 .App > :last-child {
-  position: fixed;
+  position: sticky;
   bottom: 0;
 }
