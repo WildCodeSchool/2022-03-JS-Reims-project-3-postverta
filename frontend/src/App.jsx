@@ -9,7 +9,6 @@ import Account from "./pages/Account";
 import Deck from "./pages/Deck";
 import Navbar from "./components/Navbar";
 import BookDetails from "./components/BookDetails";
-import "./App.css";
 
 function App() {
   return (
