@@ -7,7 +7,19 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FableDeLaFontaine.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
+    chapters: [
+      {
+        title: "Le premier chapitre",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
+      },
+      {
+        title: "Le deuxième chapitre",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
+      },
+    ],
   },
   {
     id: 2,
@@ -15,7 +27,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/ContesJaponais.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
   {
     id: 3,
@@ -23,7 +35,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/LesSeptsFemmesDeBarbeBleu.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
   {
     id: 4,
@@ -31,7 +43,7 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FablesEtLegendesDuJapon.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
   {
     id: 5,
@@ -39,7 +51,7 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FablesDeFlorianLeLivre.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
   {
     id: 6,
@@ -47,7 +59,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/PerraultContes.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
   {
     id: 7,
@@ -55,7 +67,7 @@ const books = [
     cover: "http://localhost:5000/assets/images/FableAntoineVincent.jpg",
     type: "Fables",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
 
   {
@@ -64,7 +76,7 @@ const books = [
     cover: "http://localhost:5000/assets/images/ContesDesMilleEtUneNuits.jpg",
     type: "Contes",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl euismod, nisi nisl consectetur, nisi nisl.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
   },
 ];
 
