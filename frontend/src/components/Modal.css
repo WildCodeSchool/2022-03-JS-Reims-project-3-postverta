@@ -33,6 +33,21 @@
   min-height: 600px;
 }
 
+.modal-window-rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white(255, 255, 255, 0);
+  border-radius: 1rem;
+  min-width: 300px;
+  min-height: 600px;
+}
+
 .modal-window::after {
   content: "close";
   color: wheat;
