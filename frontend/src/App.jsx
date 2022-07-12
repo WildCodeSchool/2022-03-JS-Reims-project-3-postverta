@@ -23,7 +23,7 @@ function App() {
             <Route path="/game" element={<Game />} />
             <Route path="/deck" element={<Deck />} />
             <Route path="/account" element={<Account />} />
-            <Route path="/book" element={<BookDetails />} />"
+            <Route path="/book" element={<BookDetails />} />
           </Routes>
           <Navbar />
         </Router>

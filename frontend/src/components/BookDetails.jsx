@@ -1,6 +1,25 @@
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import { useUserData } from "../context/UserDataContext";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function BookDetails() {
+  const { userData } = useUserData();
+
   const addCardtoUser = () => {
-    console.warn("addCardtoUser");
+    axios
+      .post(`http://localhost:5000/users/${userData.id}/cards`, {
+        cardId: 1,
+      })
+      .then((res) => {
+        if (res.status === 204) {
+          toast.success("Carte ajoutée dans votre collection");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("Vous avez déjà répondu à ce questionnaire");
+      });
   };
 
   return (
@@ -62,10 +81,23 @@ export default function BookDetails() {
           <button
             type="button"
             className="bg-white font-semibold py-2 px-4 border border-black rounded-3xl mt-4 ml-32"
-            onClick={addCardtoUser}
+            onClick={() => {
+              addCardtoUser();
+            }}
           >
             Valider
           </button>
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </form>
       </div>
     </div>
