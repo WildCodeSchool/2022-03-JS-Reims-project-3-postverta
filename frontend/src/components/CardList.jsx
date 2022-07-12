@@ -79,7 +79,7 @@ export default function CardList() {
           {cardsOnHand} / 15
         </p>
         {cardsOnHand !== 15 ? (
-          <p className="bg-white p-2">Choisis 15 cartes</p>
+          <p className="bg-white p-1">Choisis 15 cartes</p>
         ) : (
           <Link to="/game" className="bg-white p-1">
             Aller dans l'arène
