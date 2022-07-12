@@ -8,6 +8,7 @@ import Hand from "./Hand";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
+import OpponnentPseudo from "./Ground/OpponentPseudo";
 
 const minute = (time) => {
   return Math.floor(time / 60);
@@ -139,7 +140,6 @@ export default function Arena() {
       {/* <OpponentCard /> */}
       <div className="h-50">
         <div className="-rotate-180">
-          <PseudoArea />
           <Ground
             playedCards={{
               monsterCards: [],
@@ -149,6 +149,7 @@ export default function Arena() {
             }}
           />
         </div>
+        <OpponnentPseudo />
         <div className="flex justify-center items-center">
           <Link
             to="/deck"
