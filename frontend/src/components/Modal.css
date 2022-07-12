@@ -33,6 +33,21 @@
   min-height: 470px;
 }
 
+.modal-window-rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white(255, 255, 255, 0);
+  border-radius: 1rem;
+  min-width: 300px;
+  min-height: 600px;
+}
+
 .modal-window::after {
   content: "close";
   color: wheat;
@@ -40,6 +55,17 @@
   position: absolute;
   right: -2rem;
   top: 1.5rem;
+  width: 2rem;
+  text-align: center;
+  border-radius: 0 50% 50% 0;
+}
+.modal-window-rules::after {
+  content: "close";
+  color: white;
+  pointer-events: none;
+  position: absolute;
+  right: -3rem;
+  top: -20px;
   width: 2rem;
   text-align: center;
   border-radius: 0 50% 50% 0;
