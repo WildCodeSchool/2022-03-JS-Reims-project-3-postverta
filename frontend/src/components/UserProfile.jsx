@@ -14,18 +14,20 @@ export default function UserProfile() {
 
   const labelClassName =
     "bg-white bg-opacity-70 m-5 w-3/4 text-center flex flex-col items-center justify-center";
+  const inputClassName =
+    "px-3 mb-2 text-base placeholder-black border rounded-lg focus:shadow-outline";
   const whiteButtonClassName =
     "bg-white m-5 text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white";
 
   return (
     <form
-      className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-fixed bg-gray-500 bg-blend-darken flex justify-center flex-col items-center"
+      className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-cover bg-gray-500 bg-blend-darken flex justify-center flex-col items-center"
       onSubmit={submitForm}
     >
-      <h2 className="bg-white bg-opacity-70 text-center m-5 text-3xl">
+      <h2 className="bg-white bg-opacity-70 text-center m-5 text-3xl px-1">
         Mon Compte
       </h2>
-      <p className="bg-white bg-opacity-70 text-center m-5 text-xl">
+      <p className="bg-white bg-opacity-70 text-center m-5 text-xl px-1">
         Informations :
       </p>
       <label htmlFor="name" className={labelClassName}>
@@ -35,7 +37,7 @@ export default function UserProfile() {
           id="name"
           type="text"
           name="name"
-          className="px-3 mb-2 text-base text-gray-700 placeholder-black border rounded-lg focus:shadow-outline"
+          className={inputClassName}
           placeholder={userData.name}
           required="required"
         />
@@ -52,7 +54,7 @@ export default function UserProfile() {
           id="lastname"
           type="text"
           name="lastname"
-          className="m-1 placeholder-black px-3 rounded-lg focus:shadow-outline"
+          className="m-1 placeholder-black mb-2 px-3 rounded-lg focus:shadow-outline"
           placeholder={userData.pseudo}
         />
       </label>
@@ -73,7 +75,7 @@ export default function UserProfile() {
           id="genre"
           ref={genderRef}
           required="required"
-          className="px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+          className={inputClassName}
         >
           <option value="">--Merci de choisir une option --</option>
           <option value="Homme">Homme</option>
@@ -88,7 +90,7 @@ export default function UserProfile() {
           type="password"
           id="password"
           name="password"
-          className="px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+          className={inputClassName}
           required="required"
         />
       </label>
@@ -98,7 +100,7 @@ export default function UserProfile() {
           type="password"
           id="newpassword"
           name="newpassword"
-          className="px-3 mb-2 text-base text-gray-700 border rounded-lg focus:shadow-outline"
+          className={inputClassName}
           required="required"
         />
       </label>
