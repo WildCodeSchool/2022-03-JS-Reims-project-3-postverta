@@ -14,3 +14,8 @@
     perspective: 1000px;
   }
 }
+
+.App > :last-child {
+  position: fixed;
+  bottom: 0;
+}
