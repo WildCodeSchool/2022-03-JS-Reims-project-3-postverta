@@ -61,16 +61,23 @@
   display: none;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
+.card-container {
+  @apply border-2 border-black h-24 w-16 md:h-36 md:w-24;
+
   flex-shrink: 0;
 }
+
+.card {
+  @apply h-24 overflow-hidden truncate flex flex-col p-1;
+}
+
 .card__img {
+  flex-grow: 1;
   border: 2px solid grey;
 }
 
 .card__figure {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -90,6 +97,7 @@
   content: "";
   display: inline-block;
   height: 1rem;
+  line-height: 1;
   width: 0;
   overflow: hidden;
   background-image: url("../assets/img/star-black.png");
