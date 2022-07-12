@@ -1,18 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 import "./Book.css";
-import BookDetails from "./BookDetails";
-
 export default function Book({ book }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleFlip = () => {
     setIsFlipped(!isFlipped);
-  };
-
-  const toggleBookDetails = () => {
-    console.warn(book);
-    return <BookDetails book={book} />;
   };
 
   return (
@@ -25,9 +19,7 @@ export default function Book({ book }) {
         <figcaption className="flip-card-back">
           <h1 className="m-2">{book.title}</h1>
           <p className="m-5">{book.synopsis}</p>
-          <button type="button" onClick={() => toggleBookDetails(book)}>
-            Lire le livre
-          </button>
+          <Link to="/book">Lire le livre</Link>
         </figcaption>
       </figure>
       <button

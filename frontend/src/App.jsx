@@ -8,6 +8,7 @@ import Game from "./pages/Game";
 import Account from "./pages/Account";
 import Deck from "./pages/Deck";
 import Navbar from "./components/Navbar";
+import BookDetails from "./components/BookDetails";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/game" element={<Game />} />
             <Route path="/deck" element={<Deck />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/book" element={<BookDetails />} />"
           </Routes>
           <Navbar />
         </Router>
