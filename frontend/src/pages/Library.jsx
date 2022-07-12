@@ -7,19 +7,7 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FableDeLaFontaine.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
-    chapters: [
-      {
-        title: "Le premier chapitre",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
-      },
-      {
-        title: "Le deuxième chapitre",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl ",
-      },
-    ],
+      " Ces fables sont écrites entre 1668 et 1694 par jean de la fontaine  la plupart des fables mettant en scène des animaux anthropomorphes et contenant une morale au début ou à la fin.",
   },
   {
     id: 2,
@@ -27,7 +15,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/ContesJaponais.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "Aussi nombreux que fascinants, les contes du Japon et leurs enseignements traversent les âges. La sagesse, mais aussi la bravoure, la sincérité ou encore l’amitié y sont centrales.",
   },
   {
     id: 3,
@@ -35,7 +23,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/LesSeptsFemmesDeBarbeBleu.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "Qui ne connaît le conte où Charles Perrault relate comment la femme d'un seigneur surnommé Barbe-Bleue échappe au sort infligé par lui à ses six précédentes épouses ? ",
   },
   {
     id: 4,
@@ -43,7 +31,7 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FablesEtLegendesDuJapon.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "Les méchants sont punis et les bons récompensés sont plutôt destinés aux enfants, mais ces histoires très courantes au Japon, avec leur poésie et leur magie extrême orientale peuvent séduire tous les âges.",
   },
   {
     id: 5,
@@ -51,7 +39,7 @@ const books = [
     type: "Fables",
     cover: "http://localhost:5000/assets/images/FablesDeFlorianLeLivre.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "'Pour vivre heureux, vivons cachés ', ' Chacun son métier, les vaches seront bien gardées '... Qui sait aujourd'hui que l'on doit ces formules au plus prodigieux des fabulistes du XVIIIe siècle,",
   },
   {
     id: 6,
@@ -59,7 +47,7 @@ const books = [
     type: "Contes",
     cover: "http://localhost:5000/assets/images/PerraultContes.jpg",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      " L'œuvre est devenue un classique de la littérature enfantine, occultant tout le reste de la production littéraire de son auteur. ",
   },
   {
     id: 7,
@@ -67,7 +55,7 @@ const books = [
     cover: "http://localhost:5000/assets/images/FableAntoineVincent.jpg",
     type: "Fables",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "Biographie nouvelle des contemporains ou Dictionnaire historique et raisonné de tous les hommes qui, depuis la Révolution française, ont acquis de la célébrité par leurs actions, leurs écrits, leurs erreurs ou leurs crimes, ",
   },
 
   {
@@ -76,7 +64,7 @@ const books = [
     cover: "http://localhost:5000/assets/images/ContesDesMilleEtUneNuits.jpg",
     type: "Contes",
     synopsis:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod, nisi eu consectetur consectetur, nisi nisl consectetur, nisi nisl, euismod euismod nisi, eu consectetur consectetur nisi nisl .",
+      "Menacée de mort par le sultan Schahriar, qui a juré de déflorer une vierge chaque nuit avant de la tuer au matin, la belle Shéhérazade met au point un ingénieux stratagème pour échapper à son destin.",
   },
 ];
 
