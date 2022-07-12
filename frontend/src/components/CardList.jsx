@@ -79,9 +79,15 @@ export default function CardList() {
           {cardsOnHand} / 15
         </p>
         {cardsOnHand !== 15 ? (
-          <p className="bg-white p-2">Choisis 15 cartes</p>
+          <p className="text-white text-2xl text-center">
+            Le deck doit contenir
+            <br />
+            <span style={{ textShadow: "red 0 0 1rem" }}>
+              15 cartes exactement
+            </span>
+          </p>
         ) : (
-          <Link to="/game" className="bg-white p-1">
+          <Link to="/game" className="bg-white px-2 py-1">
             Aller dans l'arène
           </Link>
         )}
