@@ -8,7 +8,6 @@ import Game from "./pages/Game";
 import Account from "./pages/Account";
 import Deck from "./pages/Deck";
 import Navbar from "./components/Navbar";
-import "./App.css";
 
 function App() {
   return (
