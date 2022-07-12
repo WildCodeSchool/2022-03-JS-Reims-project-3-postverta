@@ -44,7 +44,7 @@ export default function Arena() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDataReady(true);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
