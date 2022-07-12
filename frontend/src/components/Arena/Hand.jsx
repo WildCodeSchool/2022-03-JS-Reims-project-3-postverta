@@ -1,6 +1,5 @@
 import propTypes from "prop-types";
 import Card from "../Card";
-import CardDetails from "../CardDetails";
 import "../Modal.css";
 
 function Modal({ children, open }) {
@@ -25,7 +24,7 @@ Modal.Window = Window;
 
 export default function Hand({ hand, playCard }) {
   return (
-    <div className=" h-1/4 flex gap-12 p-2 overflow-x-auto mt-auto">
+    <div className="h-1/4 flex gap-4 overflow-x-auto mt-auto">
       {hand.map((card) => (
         <Modal key={card.id} open={card.open ?? false}>
           <Modal.Trigger
@@ -35,7 +34,7 @@ export default function Hand({ hand, playCard }) {
             <Card card={card} />
           </Modal.Trigger>
           <Modal.Window>
-            <CardDetails card={card} className="" />
+            <Card card={card} className="" showDetails />
             <button
               onClick={() => {
                 playCard(card);

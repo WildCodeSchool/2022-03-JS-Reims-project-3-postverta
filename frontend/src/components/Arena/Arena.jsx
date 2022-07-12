@@ -2,14 +2,12 @@ import { toast, ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useTimer } from "use-timer";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserData } from "../../context/UserDataContext";
 import Hand from "./Hand";
-import OpponentCard from "./OpponentCard";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
-import LeaveButton from "./ModalExitButton";
 
 const minute = (time) => {
   return Math.floor(time / 60);
@@ -30,6 +28,14 @@ export default function Arena() {
     landCards: [],
   });
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDataReady(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const { time, reset, start } = useTimer({
     initialTime: 75,
     timerType: "DECREMENTAL",
@@ -40,14 +46,6 @@ export default function Arena() {
       start();
     },
   });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDataReady(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     axios
@@ -146,8 +144,8 @@ export default function Arena() {
   };
 
   return dataReady ? (
-    <div className=" min-h-screen flex flex-col justify-between">
-      <OpponentCard />
+    <div className="p-4 min-h-screen flex flex-col">
+      {/* <OpponentCard /> */}
       <div className="h-50">
         <div className="-rotate-180">
           <PseudoArea />
@@ -161,7 +159,12 @@ export default function Arena() {
           />
         </div>
         <div className="flex justify-center items-center">
-          <LeaveButton />
+          <Link
+            to="/deck"
+            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
+          >
+            Quitter
+          </Link>
           <p className="m-4 text-center text-white font-bold">
             {minute(time)}:{second(time)}
           </p>
