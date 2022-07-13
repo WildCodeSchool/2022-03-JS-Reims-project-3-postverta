@@ -1,7 +1,6 @@
-import propTypes from "prop-types";
 import RulesModal from "../components/RulesModal";
 import CardList from "../components/CardList";
-import { Modal, Trigger, Window } from "../services/Modal";
+import Modal from "../components/Modal";
 
 export default function Deck() {
   return (
@@ -16,22 +15,10 @@ export default function Deck() {
             </p>
           </div>
         </Modal.Trigger>
-        <Modal.Window className="modal-window-rules">
+        <Modal.Window>
           <RulesModal />
         </Modal.Window>
       </Modal>
     </div>
   );
 }
-
-Modal.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Trigger.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Window.propTypes = {
-  children: propTypes.node.isRequired,
-};

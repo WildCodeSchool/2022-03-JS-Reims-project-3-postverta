@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 import Card from "../Card";
-import { Modal, Trigger, Window } from "../../services/Modal";
+import Modal from "../Modal";
 
 export default function Hand({ hand, playCard }) {
   return (
@@ -47,17 +47,4 @@ Hand.propTypes = {
     })
   ).isRequired,
   playCard: propTypes.func.isRequired,
-};
-
-Modal.propTypes = {
-  children: propTypes.node.isRequired,
-  open: propTypes.bool.isRequired,
-};
-
-Trigger.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Window.propTypes = {
-  children: propTypes.node.isRequired,
 };

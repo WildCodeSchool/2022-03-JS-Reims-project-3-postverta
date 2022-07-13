@@ -1,4 +1,3 @@
-import propTypes from "prop-types";
 import { toast, ToastContainer } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useTimer } from "use-timer";
@@ -9,23 +8,13 @@ import Hand from "./Hand";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
-import { Modal, Trigger, Window } from "../../services/Modal";
+import Modal from "../Modal";
 
 const minute = (time) => {
   return Math.floor(time / 60);
 };
 
 const second = (time) => (time % 60).toString().padStart(2, "0");
-
-Modal.propTypes = {
-  children: propTypes.node.isRequired,
-};
-Trigger.propTypes = {
-  children: propTypes.node.isRequired,
-};
-Window.propTypes = {
-  children: propTypes.node.isRequired,
-};
 
 export default function Arena() {
   const [drawPile, setDrawPile] = useState([]);

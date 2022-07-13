@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 import Card from "../../Card";
 import { CardType } from "../../../prop-types/CardType";
-import { Modal, Trigger, Window } from "../../../services/Modal";
+import Modal from "../../Modal";
 
 export default function LandArea({ playedCards }) {
   return (
@@ -28,15 +28,4 @@ LandArea.propTypes = {
 };
 LandArea.defaultProps = {
   playedCards: [],
-};
-Modal.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Trigger.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Window.propTypes = {
-  children: propTypes.node.isRequired,
 };
