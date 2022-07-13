@@ -68,7 +68,7 @@
 }
 
 .card {
-  @apply h-24 overflow-hidden truncate flex flex-col p-1;
+  @apply h-24 w-16 md:h-36 md:w-24 flex flex-col p-1;
 }
 
 .card__img {

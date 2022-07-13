@@ -57,7 +57,7 @@ export default function CardList() {
           <label
             key={card.id}
             htmlFor={card.name}
-            className={`m-1 justify-center flex flex-col w-1/4 ${
+            className={`m-1 justify-center flex flex-col ${
               card.active
                 ? "border border-2 shadow-2xl shadow-white"
                 : " grayscale"

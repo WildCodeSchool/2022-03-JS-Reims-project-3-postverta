@@ -14,7 +14,7 @@ export default function Hand({ hand, playCard }) {
             <Card card={card} />
           </Modal.Trigger>
           <Modal.Window>
-            <Card card={card} className="" showDetails />
+            <Card card={card} showDetails />
             <button
               onClick={() => {
                 playCard(card);

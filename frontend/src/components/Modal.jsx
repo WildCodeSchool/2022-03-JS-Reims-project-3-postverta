@@ -1,4 +1,4 @@
-import { ModalType, defaultModal } from "../prop-types/ModalType";
+import { bool, node } from "prop-types";
 import "./Modal.css";
 
 function Modal({ children, open }) {
@@ -11,17 +11,26 @@ function Modal({ children, open }) {
 function Trigger({ children }) {
   return <summary className="modal-trigger">{children}</summary>;
 }
-
 Modal.Trigger = Trigger;
 
 function Window({ children }) {
-  return <div>{children}</div>;
+  return <div className="modal-window">{children}</div>;
 }
 Modal.Window = Window;
 
-export default Modal;
+Modal.propTypes = {
+  children: node.isRequired,
+  open: bool,
+};
+Trigger.propTypes = {
+  children: node.isRequired,
+};
+Window.propTypes = {
+  children: node.isRequired,
+};
 
-Modal.propTypes = ModalType.modal.isRequired;
-Trigger.propTypes = ModalType.trigger.isRequired;
-Window.propTypes = ModalType.window.isRequired;
-Modal.defaultProps = defaultModal.modal;
+Modal.defaultProps = {
+  open: false,
+};
+
+export default Modal;
