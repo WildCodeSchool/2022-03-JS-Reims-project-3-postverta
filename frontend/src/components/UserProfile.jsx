@@ -13,9 +13,9 @@ export default function UserProfile() {
   const nameRef = useRef();
 
   const labelClassName =
-    "bg-white bg-opacity-70 m-5 w-3/4 text-center flex flex-col items-center justify-center";
+    "bg-white bg-opacity-70 mb-4 p-4 w-3/4 text-center flex flex-col items-center justify-center ";
   const inputClassName =
-    "px-3 mb-2 text-base placeholder-black border rounded-lg focus:shadow-outline";
+    "px-3 mt-2 text-base placeholder-black border rounded-lg focus:shadow-outline";
   const whiteButtonClassName =
     "bg-white m-5 text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white";
 
