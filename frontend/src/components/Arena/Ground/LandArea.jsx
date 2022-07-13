@@ -1,23 +1,8 @@
 import propTypes from "prop-types";
 import Card from "../../Card";
 import { CardType } from "../../../prop-types/CardType";
-import "../../Modal.css";
+import { Modal, Trigger, Window } from "../../../services/Modal";
 
-function Modal({ children }) {
-  return <details className="modal">{children}</details>;
-}
-
-function Trigger({ children }) {
-  return <summary className="modal-trigger">{children}</summary>;
-}
-
-Modal.Trigger = Trigger;
-
-function Window({ children }) {
-  return <div className="modal-window">{children}</div>;
-}
-
-Modal.Window = Window;
 export default function LandArea({ playedCards }) {
   return (
     <div className="card-container self-end">
