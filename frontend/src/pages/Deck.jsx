@@ -1,23 +1,7 @@
 import propTypes from "prop-types";
 import RulesModal from "../components/RulesModal";
 import CardList from "../components/CardList";
-import "../components/Modal.css";
-
-function Modal({ children }) {
-  return <details className="modal">{children}</details>;
-}
-
-function Trigger({ children }) {
-  return <summary className="modal-trigger">{children}</summary>;
-}
-
-Modal.Trigger = Trigger;
-
-function Window({ children }) {
-  return <div className="modal-window-rules">{children}</div>;
-}
-
-Modal.Window = Window;
+import { Modal, Trigger, Window } from "../services/Modal";
 
 export default function Deck() {
   return (
@@ -32,7 +16,7 @@ export default function Deck() {
             </p>
           </div>
         </Modal.Trigger>
-        <Modal.Window>
+        <Modal.Window className="modal-window-rules">
           <RulesModal />
         </Modal.Window>
       </Modal>
