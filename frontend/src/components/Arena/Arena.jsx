@@ -198,7 +198,9 @@ export default function Arena() {
           fill="currentFill"
         />
       </svg>
-      <p className="text-white text-4xl p-4">Recherche d'adversaire...</p>
+      <p className="text-white text-4xl p-4 text-center">
+        Recherche d'adversaire...
+      </p>
     </section>
   );
 }
