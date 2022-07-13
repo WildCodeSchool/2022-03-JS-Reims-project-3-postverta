@@ -8,6 +8,7 @@ import Hand from "./Hand";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
+import Modal from "../Modal";
 
 const minute = (time) => {
   return Math.floor(time / 60);
@@ -159,12 +160,25 @@ export default function Arena() {
         </div>
         <PseudoArea pseudo="Nibor" />
         <div className="flex justify-center items-center">
-          <Link
-            to="/deck"
-            className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3"
-          >
-            Quitter
-          </Link>
+          <Modal>
+            <Modal.Trigger>
+              <p className="bg-black text-white font-bold py-2 px-4 my-4 rounded-full p-md:py-2 md:px-3">
+                Quitter
+              </p>
+            </Modal.Trigger>
+            <Modal.Window>
+              <p className="text-center text-4xl text-white">
+                Voulez-vous vraiment quitter la partie ?
+              </p>
+              <Link
+                to="/deck"
+                className="bg-black text-white font-bold text-2xl py-4 px-4 my-8 rounded-full p-md:py-2 md:px-3"
+              >
+                oui
+              </Link>
+            </Modal.Window>
+          </Modal>
+
           <p className="m-4 text-center text-white font-bold">
             {minute(time)}:{second(time)}
           </p>

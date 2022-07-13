@@ -1,26 +1,6 @@
 import propTypes from "prop-types";
 import Card from "../Card";
-import "../Modal.css";
-
-function Modal({ children, open }) {
-  return (
-    <details className="modal" open={open}>
-      {children}
-    </details>
-  );
-}
-
-function Trigger({ children }) {
-  return <summary className="modal-trigger">{children}</summary>;
-}
-
-Modal.Trigger = Trigger;
-
-function Window({ children }) {
-  return <div className="modal-window">{children}</div>;
-}
-
-Modal.Window = Window;
+import Modal from "../Modal";
 
 export default function Hand({ hand, playCard }) {
   return (
@@ -67,17 +47,4 @@ Hand.propTypes = {
     })
   ).isRequired,
   playCard: propTypes.func.isRequired,
-};
-
-Modal.propTypes = {
-  children: propTypes.node.isRequired,
-  open: propTypes.bool.isRequired,
-};
-
-Trigger.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-Window.propTypes = {
-  children: propTypes.node.isRequired,
 };
