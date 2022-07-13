@@ -148,7 +148,6 @@ export default function Arena() {
       {/* <OpponentCard /> */}
       <div className="h-50">
         <div className="-rotate-180">
-          <PseudoArea />
           <Ground
             playedCards={{
               monsterCards: [],
@@ -158,6 +157,7 @@ export default function Arena() {
             }}
           />
         </div>
+        <PseudoArea pseudo="Nibor" />
         <div className="flex justify-center items-center">
           <Link
             to="/deck"
@@ -170,7 +170,7 @@ export default function Arena() {
           </p>
           <ArenaButtons />
         </div>
-        <PseudoArea />
+        <PseudoArea pseudo={userData.pseudo} />
         <Ground
           playedCards={playedCards}
           drawCard={drawCard}
