@@ -9,28 +9,13 @@ import Hand from "./Hand";
 import ArenaButtons from "./Ground/ArenaButtons";
 import Ground from "./Ground/Ground";
 import PseudoArea from "./Ground/PseudoArea";
+import { Modal, Trigger, Window } from "../../services/Modal";
 
 const minute = (time) => {
   return Math.floor(time / 60);
 };
 
 const second = (time) => (time % 60).toString().padStart(2, "0");
-
-function Modal({ children }) {
-  return <details className="modal">{children}</details>;
-}
-
-function Trigger({ children }) {
-  return <summary className="modal-trigger">{children}</summary>;
-}
-
-Modal.Trigger = Trigger;
-
-function Window({ children }) {
-  return <div className="modal-window">{children}</div>;
-}
-
-Modal.Window = Window;
 
 Modal.propTypes = {
   children: propTypes.node.isRequired,
