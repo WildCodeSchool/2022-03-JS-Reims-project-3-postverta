@@ -1,8 +1,12 @@
 import propTypes from "prop-types";
 import "./Modal.css";
 
-export function Modal({ children }) {
-  return <details className="modal">{children}</details>;
+export function Modal({ children, open }) {
+  return (
+    <details className="modal" open={open}>
+      {children}
+    </details>
+  );
 }
 
 export function Trigger({ children }) {
@@ -19,6 +23,7 @@ Modal.Window = Window;
 
 Modal.propTypes = {
   children: propTypes.node.isRequired,
+  open: propTypes.bool,
 };
 Trigger.propTypes = {
   children: propTypes.node.isRequired,
@@ -30,4 +35,8 @@ Window.propTypes = {
 
 Window.defaultProps = {
   className: "modal-window",
+};
+
+Modal.defaultProps = {
+  open: false,
 };
