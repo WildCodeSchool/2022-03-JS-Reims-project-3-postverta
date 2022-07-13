@@ -127,7 +127,7 @@ export default function UserProfile() {
         type="button"
         className="bg-red-700 m-5 text-white text-base text-center px-10 py-2 border rounded-lg active:bg-black active:text-white"
       >
-        Quitter
+        Supprimer le compte
       </button>
     </form>
   );
