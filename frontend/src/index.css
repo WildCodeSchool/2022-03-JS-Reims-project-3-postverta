@@ -15,7 +15,11 @@
   }
 }
 
-.App > :first-child {
-  flex-grow: 1;
-  overflow: auto;
+.App > * {
+  flex: 1 1 0%;
+}
+
+.App > :last-child {
+  position: sticky;
+  bottom: 0;
 }

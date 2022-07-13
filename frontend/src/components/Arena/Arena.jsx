@@ -160,7 +160,6 @@ export default function Arena() {
       {/* <OpponentCard /> */}
       <div className="h-50">
         <div className="-rotate-180">
-          <PseudoArea />
           <Ground
             playedCards={{
               monsterCards: [],
@@ -170,6 +169,7 @@ export default function Arena() {
             }}
           />
         </div>
+        <PseudoArea pseudo="Nibor" />
         <div className="flex justify-center items-center">
           <Modal>
             <Modal.Trigger>
@@ -195,7 +195,7 @@ export default function Arena() {
           </p>
           <ArenaButtons />
         </div>
-        <PseudoArea />
+        <PseudoArea pseudo={userData.pseudo} />
         <Ground
           playedCards={playedCards}
           drawCard={drawCard}
@@ -223,7 +223,9 @@ export default function Arena() {
           fill="currentFill"
         />
       </svg>
-      <p className="text-white text-4xl p-4">Recherche d'adversaire...</p>
+      <p className="text-white text-4xl p-4 text-center">
+        Recherche d'adversaire...
+      </p>
     </section>
   );
 }
