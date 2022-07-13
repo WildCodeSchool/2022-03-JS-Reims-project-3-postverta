@@ -32,7 +32,6 @@
   min-width: 300px;
   min-height: 470px;
   max-height: 80%;
-  overflow: auto;
 }
 
 .modal-window::after {

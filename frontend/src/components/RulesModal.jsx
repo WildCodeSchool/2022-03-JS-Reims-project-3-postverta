@@ -2,7 +2,7 @@ import regleArene from "../assets/img/rules.png";
 
 function RulesModal() {
   return (
-    <div className="h-full w-full ">
+    <div className="h-full w-full overflow-auto">
       <img src={regleArene} alt="regle" />
       <div className="bg-gray-500 p-4 mt-4">
         <p className="text-white text-lg ">
