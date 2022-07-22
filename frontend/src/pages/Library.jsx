@@ -71,7 +71,7 @@ const books = [
 export default function Library() {
   return (
     <div className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-library.jpg')] bg-no-repeat bg-cover bg-gray-500 bg-blend-darken">
-      <p className="bg-white bg-opacity-70 text-center mb-10 text-3xl">
+      <p className="bg-white bg-opacity-70 text-center mb-10 text-3xl p-2">
         Bibliothèque
       </p>
       <p className="bg-white bg-opacity-70 text-center text-xl m-5">Fables :</p>
