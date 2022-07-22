@@ -24,9 +24,9 @@ export default function UserProfile() {
       className="font-['Sansita-Regular'] bg-[url('./assets/img/dream-account.jpg')] bg-cover bg-gray-500 bg-blend-darken flex justify-center flex-col items-center"
       onSubmit={submitForm}
     >
-      <h2 className="bg-white bg-opacity-70 text-center m-5 text-3xl px-1">
+      <p className="bg-white bg-opacity-70 text-center mb-10 text-3xl p-2 w-full">
         Mon Compte
-      </h2>
+      </p>
       <p className="bg-white bg-opacity-70 text-center m-5 text-xl px-1">
         Informations :
       </p>

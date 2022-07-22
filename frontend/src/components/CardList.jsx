@@ -74,12 +74,10 @@ export default function CardList() {
           </label>
         ))}
       </ul>
-      <div className="flex-col justify-center items-center flex m-1">
-        <p className="bg-white w-1/4 mb-12 mt-4 text-center">
-          {cardsOnHand} / 15
-        </p>
+      <div className="flex-col flex m-1 items-center ">
+        <p className="bg-white w-1/4  mt-4 text-center">{cardsOnHand} / 15</p>
         {cardsOnHand !== 15 ? (
-          <p className="text-white text-2xl text-center">
+          <p className="text-white text-2xl text-center m-8">
             Le deck doit contenir
             <br />
             <span style={{ textShadow: "red 0 0 1rem" }}>
@@ -87,7 +85,7 @@ export default function CardList() {
             </span>
           </p>
         ) : (
-          <Link to="/game" className="bg-white px-2 py-1">
+          <Link to="/game" className="bg-white p-2 m-8">
             Aller dans l'arène
           </Link>
         )}
