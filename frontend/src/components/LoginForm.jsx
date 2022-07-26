@@ -13,7 +13,7 @@ export default function LoginForm() {
 
   return (
     <form
-      className="p-8 bg-black text-white flex flex-col justify-center items-center font-['Sansita-Regular']"
+      className="p-8 bg-black text-white flex flex-col h-screen justify-center items-center font-['Sansita-Regular']"
       onSubmit={(event) => {
         event.preventDefault();
         const login = {
