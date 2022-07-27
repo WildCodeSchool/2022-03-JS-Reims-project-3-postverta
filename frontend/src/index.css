@@ -15,10 +15,6 @@
   }
 }
 
-.App > * {
-  flex: 1 1 0%;
-}
-
 .App > :last-child {
   position: sticky;
   bottom: 0;
